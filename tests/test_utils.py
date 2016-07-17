@@ -13,7 +13,7 @@ class DummyClassTestCase(TestCase):
         self.a = 10
         self.b = 5
         self.add_function = lambda instance: instance.a + instance.b
-        self.substract_function = lambda instance: instance.a - instance.b
+        self.subtract_function = lambda instance: instance.a - instance.b
 
     def test_init(self):
         """
@@ -22,7 +22,7 @@ class DummyClassTestCase(TestCase):
         @raise AssertionError: If the test fails.
         """
         dummy = DummyClass(attributes={'a': self.a, 'b': self.b},
-                           functions={'add': self.add_function, 'subtract': self.substract_function})
+                           functions={'add': self.add_function, 'subtract': self.subtract_function})
 
         self.assertEquals(self.a, dummy.a)
         self.assertEquals(self.b, dummy.b)
@@ -54,7 +54,7 @@ class DummyClassTestCase(TestCase):
         @raise AssertionError: If the test fails.
         """
         dummy = DummyClass(attributes={'a': self.a, 'b': self.b},
-                           functions={'subtract': self.substract_function})
+                           functions={'subtract': self.subtract_function})
 
         self.assertEquals(5, dummy.subtract())
 
