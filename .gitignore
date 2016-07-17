@@ -89,4 +89,4 @@ ENV/
 .ropeproject
 
 # Other
-*.idea
+.idea
