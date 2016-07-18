@@ -1,5 +1,5 @@
 from unittest import TestCase
-from tests.utils.dummy_class import DummyClass
+from tests.utils.dummy_class import dummy_factory
 
 
 class DummyClassTestCase(TestCase):
@@ -21,20 +21,14 @@ class DummyClassTestCase(TestCase):
 
         @raise AssertionError: If the test fails.
         """
-        dummy = DummyClass(attributes={'a': self.a, 'b': self.b},
-                           functions={'add': self.add_function, 'subtract': self.subtract_function})
+        dummy_class = dummy_factory(base_class=object,
+                                    attributes={'a': self.a, 'b': self.b},
+                                    functions={'add': self.add_function, 'subtract': self.subtract_function})
+
+        dummy = dummy_class()
 
         self.assertEquals(self.a, dummy.a)
         self.assertEquals(self.b, dummy.b)
-
-    def test_invalid_init(self):
-        """
-        Test the __init__ method with invalid parameters.
-
-        @raise AssertionError if the test fails:
-        """
-        with self.assertRaises(ValueError):
-            DummyClass(attributes={'a': self.add_function}, functions={'add': self.a})
 
     def test_add(self):
         """
@@ -42,9 +36,11 @@ class DummyClassTestCase(TestCase):
 
         @raise AssertionError: If the test fails.
         """
-        dummy = DummyClass(attributes={'a': self.a, 'b': self.b},
-                           functions={'add': self.add_function})
+        dummy_class = dummy_factory(base_class=object,
+                                    attributes={'a': self.a, 'b': self.b},
+                                    functions={'add': self.add_function})
 
+        dummy = dummy_class()
         self.assertEquals(15, dummy.add())
 
     def test_subtract(self):
@@ -53,10 +49,52 @@ class DummyClassTestCase(TestCase):
 
         @raise AssertionError: If the test fails.
         """
-        dummy = DummyClass(attributes={'a': self.a, 'b': self.b},
-                           functions={'subtract': self.subtract_function})
+        dummy_class = dummy_factory(base_class=object,
+                                    attributes={'a': self.a, 'b': self.b},
+                                    functions={'subtract': self.subtract_function})
 
+        dummy = dummy_class()
         self.assertEquals(5, dummy.subtract())
+
+    def test_instances(self):
+        """
+        Test multiple instances.
+
+        @raise AssertionError: If the test fails.
+        """
+        dummy_class_one = dummy_factory(base_class=object,
+                                        attributes={'a': self.a, 'b': self.b},
+                                        functions={'add': self.add_function})
+
+        dummy_class_one_instance_one = dummy_class_one()
+        dummy_class_one_instance_two = dummy_class_one()
+
+        self.assertEquals(dummy_class_one_instance_one.a, dummy_class_one_instance_two.a)
+        self.assertEquals(dummy_class_one_instance_one.b, dummy_class_one_instance_two.b)
+        self.assertEquals(dummy_class_one_instance_one.add(), dummy_class_one_instance_two.add())
+
+    def test_classes(self):
+        """
+        Test multiple classes.
+
+        @raise AssertionError: If the test fails.
+        """
+        dummy_class_one = dummy_factory(base_class=object,
+                                        attributes={'a': self.a, 'b': self.b},
+                                        functions={'add': self.add_function})
+        dummy_class_two = dummy_factory(base_class=object,
+                                        attributes={'a': 30, 'b': 10},
+                                        functions={'subtract': self.subtract_function})
+
+        self.assertNotEquals(dummy_class_one.a, dummy_class_two.a)
+        self.assertNotEquals(dummy_class_one.b, dummy_class_two.b)
+
+        assert (hasattr(dummy_class_one, 'add'))
+        assert (not hasattr(dummy_class_one, 'subtract'))
+
+        assert (hasattr(dummy_class_two, 'subtract'))
+        assert (not hasattr(dummy_class_two, 'add'))
+
 
 
 
