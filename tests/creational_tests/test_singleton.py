@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from pypatterns.creational_patterns import Singleton
+from pypatterns.creational.singleton import Singleton
 from tests.utils.dummy import dummy_class_factory
 
 
