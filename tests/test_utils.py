@@ -1,5 +1,6 @@
 from unittest import TestCase
-from tests.utils.dummy_class import dummy_factory
+from tests.utils.dummy import dummy_class_factory
+from abc import ABCMeta, ABC
 
 
 class DummyClassTestCase(TestCase):
@@ -21,9 +22,8 @@ class DummyClassTestCase(TestCase):
 
         @raise AssertionError: If the test fails.
         """
-        dummy_class = dummy_factory(base_class=object,
-                                    attributes={'a': self.a, 'b': self.b},
-                                    functions={'add': self.add_function, 'subtract': self.subtract_function})
+        dummy_class = dummy_class_factory(attributes={'a': self.a, 'b': self.b},
+                                          functions={'add': self.add_function, 'subtract': self.subtract_function})
 
         dummy = dummy_class()
 
@@ -36,9 +36,8 @@ class DummyClassTestCase(TestCase):
 
         @raise AssertionError: If the test fails.
         """
-        dummy_class = dummy_factory(base_class=object,
-                                    attributes={'a': self.a, 'b': self.b},
-                                    functions={'add': self.add_function})
+        dummy_class = dummy_class_factory(attributes={'a': self.a, 'b': self.b},
+                                          functions={'add': self.add_function})
 
         dummy = dummy_class()
         self.assertEquals(15, dummy.add())
@@ -49,9 +48,8 @@ class DummyClassTestCase(TestCase):
 
         @raise AssertionError: If the test fails.
         """
-        dummy_class = dummy_factory(base_class=object,
-                                    attributes={'a': self.a, 'b': self.b},
-                                    functions={'subtract': self.subtract_function})
+        dummy_class = dummy_class_factory(attributes={'a': self.a, 'b': self.b},
+                                          functions={'subtract': self.subtract_function})
 
         dummy = dummy_class()
         self.assertEquals(5, dummy.subtract())
@@ -62,9 +60,8 @@ class DummyClassTestCase(TestCase):
 
         @raise AssertionError: If the test fails.
         """
-        dummy_class_one = dummy_factory(base_class=object,
-                                        attributes={'a': self.a, 'b': self.b},
-                                        functions={'add': self.add_function})
+        dummy_class_one = dummy_class_factory(attributes={'a': self.a, 'b': self.b},
+                                              functions={'add': self.add_function})
 
         dummy_class_one_instance_one = dummy_class_one()
         dummy_class_one_instance_two = dummy_class_one()
@@ -79,12 +76,10 @@ class DummyClassTestCase(TestCase):
 
         @raise AssertionError: If the test fails.
         """
-        dummy_class_one = dummy_factory(base_class=object,
-                                        attributes={'a': self.a, 'b': self.b},
-                                        functions={'add': self.add_function})
-        dummy_class_two = dummy_factory(base_class=object,
-                                        attributes={'a': 30, 'b': 10},
-                                        functions={'subtract': self.subtract_function})
+        dummy_class_one = dummy_class_factory(attributes={'a': self.a, 'b': self.b},
+                                              functions={'add': self.add_function})
+        dummy_class_two = dummy_class_factory(attributes={'a': 30, 'b': 10},
+                                              functions={'subtract': self.subtract_function})
 
         self.assertNotEquals(dummy_class_one.a, dummy_class_two.a)
         self.assertNotEquals(dummy_class_one.b, dummy_class_two.b)
@@ -95,6 +90,29 @@ class DummyClassTestCase(TestCase):
         assert (hasattr(dummy_class_two, 'subtract'))
         assert (not hasattr(dummy_class_two, 'add'))
 
+    def test_meta_class(self):
+        """
+        Test assigning a metaclass.
+
+        @raise AssertionError: If the test fails.
+        """
+        dummy_class = dummy_class_factory(attributes={'a': self.a, 'b': self.b},
+                                          functions={'add': self.add_function},
+                                          meta_class=ABCMeta)
+
+        self.assertEquals(ABCMeta, dummy_class.__class__)
+
+    def test_base_class(self):
+        """
+        Test assigning a base class.
+
+        @raise AssertionError: If the test fails
+        """
+        dummy_class = dummy_class_factory(attributes={'a': self.a, 'b': self.b},
+                                          functions={'add': self.add_function},
+                                          base_class=ABC)
+
+        self.assertEquals(ABC, dummy_class.__base__)
 
 
 

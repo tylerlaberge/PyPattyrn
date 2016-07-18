@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from tests.utils.dummy_class import dummy_factory
+from tests.utils.dummy import dummy_class_factory
 from patterns.creational import Singleton
 
 
@@ -12,15 +12,40 @@ class SingletonTestCase(TestCase):
         """
         Initialize testing data.
         """
-        self.dummy_class = dummy_factory(base_class=Singleton, attributes={}, functions={})
+        self.dummy_class_one = dummy_class_factory(meta_class=Singleton,
+                                                   attributes={},
+                                                   functions={})
 
-    def test_id(self):
+        self.dummy_class_two = dummy_class_factory(meta_class=Singleton,
+                                                   attributes={},
+                                                   functions={})
+
+    def test_single(self):
         """
-        Test the id's of two singleton instances.
+        Test instances from a single singleton class.
 
         @raise AssertionError: If the test fails.
         """
-        dummy = self.dummy_class()
-        dummy_2 = self.dummy_class()
+        dummy_one = self.dummy_class_one()
+        dummy_two = self.dummy_class_one()
 
-        self.assertEquals(id(dummy), id(dummy_2))
+        self.assertEquals(id(dummy_one), id(dummy_two))
+
+    def test_multiple(self):
+        """
+        Test instances from multiple singleton classes.
+
+        @raise AssertionError: If the test fails.
+        """
+        dummy_class_one_instance_one = self.dummy_class_one()
+        dummy_class_one_instance_two = self.dummy_class_one()
+
+        dummy_class_two_instance_one = self.dummy_class_two()
+        dummy_class_two_instance_two = self.dummy_class_two()
+
+        self.assertEquals(id(dummy_class_one_instance_one), id(dummy_class_one_instance_two))
+        self.assertEquals(id(dummy_class_two_instance_one), id(dummy_class_two_instance_two))
+
+        self.assertNotEquals(id(dummy_class_one_instance_one), id(dummy_class_two_instance_one))
+        self.assertNotEquals(id(dummy_class_one_instance_two), id(dummy_class_two_instance_two))
+

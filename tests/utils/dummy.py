@@ -1,13 +1,14 @@
 from types import MethodType
 
 
-def dummy_factory(base_class, attributes, functions):
+def dummy_class_factory(attributes, functions, base_class=object, meta_class=type):
 
-    class DummyClass(base_class):
+    class DummyClass(base_class, metaclass=meta_class):
         """
         Class representing dummy data.
         """
-        pass
+        def __init__(self):
+            pass
 
     for key, value in attributes.items():
         if callable(value):
