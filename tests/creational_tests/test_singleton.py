@@ -1,13 +1,14 @@
 from unittest import TestCase
 
+from pypatterns.creational_patterns import Singleton
 from tests.utils.dummy import dummy_class_factory
-from patterns.creational import Singleton
 
 
 class SingletonTestCase(TestCase):
     """
     Unit testing class for the singleton design pattern.
     """
+
     def setUp(self):
         """
         Initialize testing data.
@@ -48,4 +49,3 @@ class SingletonTestCase(TestCase):
 
         self.assertNotEquals(id(dummy_class_one_instance_one), id(dummy_class_two_instance_one))
         self.assertNotEquals(id(dummy_class_one_instance_two), id(dummy_class_two_instance_two))
-

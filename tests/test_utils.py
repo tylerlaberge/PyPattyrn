@@ -1,12 +1,14 @@
-from unittest import TestCase
-from tests.utils.dummy import dummy_class_factory
 from abc import ABCMeta, ABC
+from unittest import TestCase
+
+from tests.utils.dummy import dummy_class_factory
 
 
 class DummyClassTestCase(TestCase):
     """
     Unit testing class for the DummyClass class.
     """
+
     def setUp(self):
         """
         Initialize testing data.
@@ -113,7 +115,3 @@ class DummyClassTestCase(TestCase):
                                           base_class=ABC)
 
         self.assertEquals(ABC, dummy_class.__base__)
-
-
-
-

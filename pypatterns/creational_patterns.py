@@ -1,5 +1,3 @@
-
-
 class Singleton(type):
     """
     Singleton Metaclass.
@@ -16,4 +14,3 @@ class Singleton(type):
             cls.__instance = type.__call__(cls, *args, **kwargs)
 
         return cls.__instance
-
