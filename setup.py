@@ -6,7 +6,9 @@ setup(
     description='Python Design Patterns',
     author='Tyler LaBerge',
     packages=[
-          'pypatterns',
-          'pypatterns.creational'
+        'pypatterns',
+        'pypatterns.creational',
+        'pypatterns.behavioral'
     ],
 )
+
