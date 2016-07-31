@@ -1,6 +1,6 @@
-from abc import ABCMeta, ABC
 from unittest import TestCase
 
+from abc import ABCMeta, ABC
 from tests.utils.dummy import dummy_class_factory
 
 

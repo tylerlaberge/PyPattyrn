@@ -12,12 +12,14 @@ class InvalidInvokerCommandException(Exception):
     """
     Exception for when an invalid command is given to an Invoker to execute.
     """
+    pass
 
 
 class Receiver(object, metaclass=ABCMeta):
     """
     Abstract receiver class as part of the Command pattern.
     """
+
     def action(self, name, *args, **kwargs):
         """
         Delegates which method to be called for a desired action.
@@ -37,6 +39,7 @@ class Command(object, metaclass=ABCMeta):
     """
     Abstract Command class as part of the Command pattern.
     """
+
     def __init__(self, receiver):
         """
         Initialize a new command instance.
@@ -65,6 +68,7 @@ class Invoker(object, metaclass=ABCMeta):
     """
     Abstract Invoker class as part of the Command pattern.
     """
+
     def __init__(self, valid_commands):
         """
         Initialize a new Invoker instance.

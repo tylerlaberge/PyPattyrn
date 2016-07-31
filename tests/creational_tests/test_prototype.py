@@ -1,5 +1,6 @@
 from math import sqrt
 from unittest import TestCase
+
 from pypatterns.creational.prototype import Prototype
 
 
@@ -7,12 +8,13 @@ class PrototypeTestCase(TestCase):
     """
     Unit testing class for the Prototype class.
     """
+
     def setUp(self):
         """
         Initialize testing data.
         """
-        class Point(Prototype):
 
+        class Point(Prototype):
             def __init__(self, x, y):
                 self.x = x
                 self.y = y
@@ -87,7 +89,7 @@ class PrototypeTestCase(TestCase):
         point_one = self.__point_class(20, 25)
 
         def distance_to(this, other):
-            return sqrt((this.x - other.x)**2 + (this.y - other.y)**2)
+            return sqrt((this.x - other.x) ** 2 + (this.y - other.y) ** 2)
 
         point_two = point_one.copy(distance_to=distance_to)
         point_three = point_two.copy()
@@ -97,7 +99,3 @@ class PrototypeTestCase(TestCase):
         self.assertEquals(point_two.distance_to(point_one), 0)
         self.assertTrue(hasattr(point_three, 'distance_to'))
         self.assertEquals(point_three.distance_to(point_two), 0)
-
-
-
-

@@ -1,16 +1,19 @@
 from unittest import TestCase
-from pypatterns.creational.builder import Director, Builder
+
 from abc import ABCMeta, abstractmethod
+from pypatterns.creational.builder import Director, Builder
 
 
 class BuilderTestCase(TestCase):
     """
     Unit testing class for the Builder class.
     """
+
     def setUp(self):
         """
         Initialize testing data.
         """
+
         class Building(object):
             def __init__(self):
                 self.floor = None
@@ -20,7 +23,6 @@ class BuilderTestCase(TestCase):
                 return 'Floor: {0.floor} | Size: {0.size}'.format(self)
 
         class HomeBuilder(Builder, metaclass=ABCMeta):
-
             def __init__(self):
                 super().__init__(Building())
                 self._register('floor', self._build_floor)
@@ -35,7 +37,6 @@ class BuilderTestCase(TestCase):
                 pass
 
         class HouseBuilder(HomeBuilder):
-
             def _build_floor(self):
                 self.constructed_object.floor = 'One'
 
@@ -43,7 +44,6 @@ class BuilderTestCase(TestCase):
                 self.constructed_object.size = 'Big'
 
         class FlatBuilder(HomeBuilder):
-
             def _build_floor(self):
                 self.constructed_object.floor = 'More than one'
 
@@ -76,10 +76,12 @@ class DirectorTestCase(TestCase):
     """
     Unit testing class for the Director class
     """
+
     def setUp(self):
         """
         Initialize testing data.
         """
+
         class Building(object):
             def __init__(self):
                 self.floor = None

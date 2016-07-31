@@ -6,6 +6,7 @@ class Prototype(object):
     """
     Prototype design pattern abstract class.
     """
+
     def copy(self, **attributes):
         """
         Copy this object and optionally update attributes.
@@ -21,6 +22,3 @@ class Prototype(object):
                 setattr(obj, attribute, attributes[attribute])
 
         return obj
-
-
-

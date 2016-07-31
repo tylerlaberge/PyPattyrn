@@ -1,5 +1,6 @@
-from copy import deepcopy
 from unittest import TestCase
+
+from copy import deepcopy
 from pypatterns.creational.pool import Reusable, Pool
 
 
@@ -7,12 +8,13 @@ class ReusableTestCase(TestCase):
     """
     Unit testing class for the reusable class.
     """
+
     def setUp(self):
         """
         Initialize testing data.
         """
-        class Dog(Reusable):
 
+        class Dog(Reusable):
             def __init__(self):
                 self.sound = "woof"
                 super(Dog, self).__init__()
@@ -52,19 +54,19 @@ class PoolTestCase(TestCase):
     """
     Unit testing class for the Pool class.
     """
+
     def setUp(self):
         """
         Initialize testing data.
         """
-        class Dog(Reusable):
 
+        class Dog(Reusable):
             def __init__(self, sound, name):
                 self.sound = sound
                 self.name = name
                 super(Dog, self).__init__()
 
         class DogPool(Pool):
-
             def __init__(self):
                 super(DogPool, self).__init__(Dog, 'woof', 'george')
 
@@ -118,14 +120,12 @@ class PoolTestCase(TestCase):
         dog_pool_two = self.dog_pool_class()
 
         class Cat(Reusable):
-
             def __init__(self, sound, name):
                 self.sound = sound
                 self.name = name
                 super().__init__()
 
         class CatPool(Pool):
-
             def __init__(self):
                 super().__init__(Cat, 'meow', 'tom')
 

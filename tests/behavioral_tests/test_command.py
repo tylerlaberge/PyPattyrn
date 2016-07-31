@@ -1,4 +1,5 @@
 from unittest import TestCase
+
 from pypatterns.behavioral.command import InvalidActionException, InvalidInvokerCommandException, \
     Receiver, Command, Invoker
 
@@ -7,12 +8,13 @@ class ReceiverTestCase(TestCase):
     """
     Unit testing class for the Receiver class.
     """
+
     def setUp(self):
         """
         Initialize testing data.
         """
-        class Thermostat(Receiver):
 
+        class Thermostat(Receiver):
             def raise_temp(self, amount):
                 return "Temperature raised by {0} degrees".format(amount)
 
@@ -44,10 +46,12 @@ class CommandTestCase(TestCase):
     """
     Unit testing class for the Command class.
     """
+
     def setUp(self):
         """
         Initialize testing data.
         """
+
         class Thermostat(Receiver):
             def raise_temp(self, amount):
                 return "Temperature raised by {0} degrees".format(amount)
@@ -56,7 +60,6 @@ class CommandTestCase(TestCase):
                 return "Temperature lowered by {0} degrees".format(amount)
 
         class RaiseTempCommand(Command):
-
             def __init__(self, receiver, amount=5):
                 super().__init__(receiver)
                 self.amount = amount
@@ -68,7 +71,6 @@ class CommandTestCase(TestCase):
                 return self._receiver.action('lower_temp', self.amount)
 
         class LowerTempCommand(Command):
-
             def __init__(self, receiver, amount=5):
                 super().__init__(receiver)
                 self.amount = amount
@@ -100,10 +102,12 @@ class InvokerTestCase(TestCase):
     """
     Unit testing class for the Invoker class.
     """
+
     def setUp(self):
         """
         Initialize testing data.
         """
+
         class Thermostat(Receiver):
             def raise_temp(self, amount):
                 return "Temperature raised by {0} degrees".format(amount)
@@ -134,7 +138,6 @@ class InvokerTestCase(TestCase):
                 return self._receiver.action('raise_temp', self.amount)
 
         class Worker(Invoker):
-
             def __init__(self):
                 super().__init__([LowerTempCommand, RaiseTempCommand])
 
@@ -158,8 +161,8 @@ class InvokerTestCase(TestCase):
 
         @raise AssertionError: If the test fails.
         """
-        class Light(Receiver):
 
+        class Light(Receiver):
             def turn_on(self):
                 return "Light turned on"
 
@@ -167,7 +170,6 @@ class InvokerTestCase(TestCase):
                 return "Light turned off"
 
         class TurnOnLightCommand(Command):
-
             def execute(self):
                 return self._receiver.action('turn_on')
 

@@ -7,6 +7,7 @@ class Director(object, metaclass=ABCMeta):
 
     Part of the builder pattern.
     """
+
     def __init__(self):
         """
         Initialize a new Director.
@@ -39,6 +40,7 @@ class Builder(object):
 
     Part of the builder pattern.
     """
+
     def __init__(self, constructed_object):
         """
         Initialize a new Builder.

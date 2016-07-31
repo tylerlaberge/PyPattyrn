@@ -6,6 +6,7 @@ class Reusable(object):
     """
     An abstract reusable class.
     """
+
     def __init__(self):
         """
         Initialize a new Reusable instance.
@@ -24,6 +25,7 @@ class Pool(object, metaclass=Singleton):
     """
     An Object Pool design pattern implementation.
     """
+
     def __init__(self, reusable_class, *args, **kwargs):
         """
         Initialize a new object pool instance.

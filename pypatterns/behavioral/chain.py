@@ -12,6 +12,7 @@ class ChainLink(object, metaclass=ABCMeta):
     """
     Abstract ChainLink object as part of the Chain of Responsibility pattern.
     """
+
     def __init__(self):
         """
         Initialize a new ChainLink instance.
@@ -52,6 +53,7 @@ class Chain(object, metaclass=ABCMeta):
     """
     Abstract Chain class as part of the Chain of Responsibility pattern.
     """
+
     def __init__(self, chainlink):
         """
         Initialize a new Chain instance.

@@ -1,4 +1,5 @@
 from unittest import TestCase
+
 from pypatterns.behavioral.chain import ChainException, ChainLink, Chain
 
 
@@ -6,10 +7,12 @@ class ChainLinkTestCase(TestCase):
     """
     Unit testing class for the ChainLink class.
     """
+
     def setUp(self):
         """
         Initialize testing data.
         """
+
         class ConcreteChainLinkThree(ChainLink):
 
             def handle(self, request):
@@ -71,10 +74,12 @@ class ChainTestCase(TestCase):
     """
     Unit testing class for the Chain class.
     """
+
     def setUp(self):
         """
         Initialize testing data.
         """
+
         class ConcreteChainLinkThree(ChainLink):
 
             def handle(self, request):

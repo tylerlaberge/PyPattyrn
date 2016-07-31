@@ -1,4 +1,5 @@
 from unittest import TestCase
+
 from pypatterns.creational.factory import Factory, AbstractFactory
 
 
@@ -6,27 +7,25 @@ class FactoryTestCase(TestCase):
     """
     Unit testing class for the Factory class.
     """
+
     def setUp(self):
         """
         Initialize testing data.
         """
-        class Cat(object):
 
+        class Cat(object):
             def speak(self):
                 return 'Meow'
 
         class Dog(object):
-
             def speak(self):
                 return 'Woof'
 
         class CatFactory(Factory):
-
             def create(self, **kwargs):
                 return Cat()
 
         class DogFactory(Factory):
-
             def create(self, **kwargs):
                 return Dog()
 
@@ -55,10 +54,12 @@ class AbstractFactoryTestCase(TestCase):
     """
     Unit testing class for the AbstractFactory class.
     """
+
     def setUp(self):
         """
         Initialize testing data.
         """
+
         class Cat(object):
             def speak(self):
                 return 'Meow'
@@ -76,7 +77,6 @@ class AbstractFactoryTestCase(TestCase):
                 return Dog()
 
         class AnimalFactory(AbstractFactory):
-
             def __init__(self):
                 super().__init__()
                 self._register('cat', CatFactory)
@@ -103,4 +103,3 @@ class AbstractFactoryTestCase(TestCase):
 
         self.assertEquals('Meow', cat.speak())
         self.assertEquals('Woof', dog.speak())
-

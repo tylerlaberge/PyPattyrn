@@ -7,6 +7,7 @@ class Factory(object, metaclass=ABCMeta):
 
     All Factories should inherit this class and overwrite the create method.
     """
+
     @abstractmethod
     def create(self, **kwargs):
         """
@@ -23,6 +24,7 @@ class AbstractFactory(object):
     """
     Abstract Factory Class.
     """
+
     def __init__(self):
         """
         Initialize the abstract factory.
