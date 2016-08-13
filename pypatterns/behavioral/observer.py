@@ -47,7 +47,6 @@ class Observable(object):
     def notify(self):
         """
         Notify all attached Observers of the state of this Observable.
-        This should be called when this Observable's state changes.
         """
         for observer in self._observers:
             state = {k: v for k, v in self.__dict__.items() if not k.startswith('__') and not k.startswith('_')}
