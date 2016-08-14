@@ -69,6 +69,40 @@ class ExpressionTestCase(TestCase):
         self.assertEquals('FOO', self.context.out_data)
 
 
+class TerminalExpressionTestCase(TestCase):
+    """
+    Unit testing class for the TerminalExpression class.
+    """
+    def setUp(self):
+        """
+        Initialize testing data.
+        """
+        class ConcreteTerminal(TerminalExpression):
+
+            def interpret(self, context):
+                return self.literal
+
+        self.concrete_terminal_class = ConcreteTerminal
+
+    def test_init(self):
+        """
+        Test the __init__ method.
+
+        @raise AssertionError: If the test fails.
+        """
+        terminal = self.concrete_terminal_class('foo')
+        self.assertEquals('foo', terminal.literal)
+
+    def test_interpret(self):
+        """
+        Test the interpret method.
+
+        @raise AssertionError: If the test fails.
+        """
+        terminal = self.concrete_terminal_class('bar')
+        self.assertEquals('bar', terminal.interpret(Context('')))
+
+
 class NonTerminalExpressionTestCase(TestCase):
     """
     Unit testing class for the NonTerminalExpression class.
@@ -82,12 +116,13 @@ class NonTerminalExpressionTestCase(TestCase):
             def interpret(self, context):
                 return self.literal
             
-        class RomanExpression(NonTerminalExpression, metaclass=ABCMeta):
+        class RomanNonTerminalExpression(NonTerminalExpression, metaclass=ABCMeta):
 
             def interpret(self, context):
+
                 if context.out_data is None:
                     context.out_data = 0
-
+                    
                 if len(context.in_data) == 0:
                     return
 
@@ -107,27 +142,23 @@ class NonTerminalExpressionTestCase(TestCase):
                     context.out_data += 1 * self.multiplier()
                     context.in_data = context.in_data[1:]
 
-            @abstractmethod
             def one(self):
-                pass
-            
-            @abstractmethod
+                return self.expressions['one'].interpret(None)
+
             def four(self):
-                pass
-            
-            @abstractmethod
+                return self.expressions['four'].interpret(None)
+
             def five(self):
-                pass
-            
-            @abstractmethod
+                return self.expressions['five'].interpret(None)
+
             def nine(self):
-                pass
+                return self.expressions['nine'].interpret(None)
             
             @abstractmethod
             def multiplier(self):
                 pass
 
-        class ThousandExpression(RomanExpression):
+        class ThousandExpression(RomanNonTerminalExpression):
 
             def __init__(self):
                 one_terminal = RomanTerminalExpression('M')
@@ -136,23 +167,11 @@ class NonTerminalExpressionTestCase(TestCase):
                 nine_terminal = RomanTerminalExpression(' ')
            
                 super().__init__(one=one_terminal, four=four_terminal, five=five_terminal, nine=nine_terminal)
-
-            def one(self):
-                return self.expressions['one'].interpret(None)
-            
-            def four(self):
-                return self.expressions['four'].interpret(None)
-            
-            def five(self):
-                return self.expressions['five'].interpret(None)
-            
-            def nine(self):
-                return self.expressions['nine'].interpret(None)
             
             def multiplier(self):
                 return 1000
 
-        class HundredExpression(RomanExpression):
+        class HundredExpression(RomanNonTerminalExpression):
             
             def __init__(self):                
                 one_terminal = RomanTerminalExpression('C')
@@ -161,23 +180,11 @@ class NonTerminalExpressionTestCase(TestCase):
                 nine_terminal = RomanTerminalExpression('CM')
                 
                 super().__init__(one=one_terminal, four=four_terminal, five=five_terminal, nine=nine_terminal)
-
-            def one(self):
-                return self.expressions['one'].interpret(None)
-
-            def four(self):
-                return self.expressions['four'].interpret(None)
-
-            def five(self):
-                return self.expressions['five'].interpret(None)
-
-            def nine(self):
-                return self.expressions['nine'].interpret(None)
             
             def multiplier(self):
                 return 100
 
-        class TenExpression(RomanExpression):
+        class TenExpression(RomanNonTerminalExpression):
 
             def __init__(self):
                 one_terminal = RomanTerminalExpression('X')
@@ -186,23 +193,11 @@ class NonTerminalExpressionTestCase(TestCase):
                 nine_terminal = RomanTerminalExpression('XC')
 
                 super().__init__(one=one_terminal, four=four_terminal, five=five_terminal, nine=nine_terminal)
-
-            def one(self):
-                return self.expressions['one'].interpret(None)
-
-            def four(self):
-                return self.expressions['four'].interpret(None)
-
-            def five(self):
-                return self.expressions['five'].interpret(None)
-
-            def nine(self):
-                return self.expressions['nine'].interpret(None)
             
             def multiplier(self):
                 return 10
 
-        class OneExpression(RomanExpression):
+        class OneExpression(RomanNonTerminalExpression):
 
             def __init__(self):
                 one_terminal = RomanTerminalExpression('I')
@@ -211,18 +206,6 @@ class NonTerminalExpressionTestCase(TestCase):
                 nine_terminal = RomanTerminalExpression('IX')
     
                 super().__init__(one=one_terminal, four=four_terminal, five=five_terminal, nine=nine_terminal)
-
-            def one(self):
-                return self.expressions['one'].interpret(None)
-
-            def four(self):
-                return self.expressions['four'].interpret(None)
-
-            def five(self):
-                return self.expressions['five'].interpret(None)
-
-            def nine(self):
-                return self.expressions['nine'].interpret(None)
             
             def multiplier(self):
                 return 1

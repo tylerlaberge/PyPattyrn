@@ -6,6 +6,11 @@ class Context(object):
     Context class as part of the Interpreter design pattern.
     """
     def __init__(self, in_data):
+        """
+        Initialize a new Context class.
+
+        @param in_data: The starting input of this context.
+        """
         self.in_data = in_data
         self.out_data = None
 
@@ -47,7 +52,7 @@ class TerminalExpression(Expression, metaclass=ABCMeta):
         """
         Initialize a new TerminalExpression instance.
 
-        @param literal: A literal representing this TerminalExpression.
+        @param literal: A literal value representing this TerminalExpression.
         """
         self.literal = literal
 
