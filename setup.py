@@ -8,7 +8,8 @@ setup(
     packages=[
         'pypatterns',
         'pypatterns.creational',
-        'pypatterns.behavioral'
+        'pypatterns.behavioral',
+        'pypatterns.structural'
     ],
 )
 
