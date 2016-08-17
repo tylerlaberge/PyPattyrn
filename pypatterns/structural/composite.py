@@ -5,6 +5,9 @@ class Composite(object):
     def __init__(self, interface):
         """
         Initialize a new Composite instance.
+
+        @param interface: The interface the all child components must adhere to when added to this composite.
+        @type interface: class
         """
         self.components = set()
         self.interface = interface
@@ -14,6 +17,7 @@ class Composite(object):
         Add a component to this composite.
 
         @param component: The component to add to this Composite
+        @raise AttributeError: If the component does not adhere to this Composites interface.
         """
         valid = False
         try:
@@ -40,12 +44,13 @@ class Composite(object):
         except KeyError:
             pass
 
-    def delegate(self, func_name):
+    def _delegate(self, func_name):
         """
         Apply a function to all child components by function name.
 
         @param func_name: The name of the function to call with all child components.
         @type func_name: str
+        @raise AttributeError: If a child component does not have a callable function with the given name.
         """
         for component in self.components:
             attribute = getattr(component, func_name)
@@ -62,4 +67,4 @@ class Composite(object):
         @type item: str
         @return: A function that when called will call all child functions with the given function name.
         """
-        return lambda: self.delegate(item)
+        return lambda: self._delegate(item)

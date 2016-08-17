@@ -31,7 +31,11 @@ class CompositeTestCase(TestCase):
         self.leaf_three = Leaf()
 
     def test_add_component(self):
+        """
+        Test the add_component method.
 
+        @raise AssertionError: If the test fails.
+        """
         composite = Composite(self.component_class)
         composite.add_component(self.leaf_one)
 
@@ -56,7 +60,11 @@ class CompositeTestCase(TestCase):
             self.assertSetEqual({self.leaf_three}, composite_three.components)
 
     def test_remove_component(self):
+        """
+        Test the remove_component method.
 
+        @raise AssertionError: If the test fails.
+        """
         composite = Composite(self.component_class)
 
         composite_two = Composite(self.component_class)
@@ -78,7 +86,11 @@ class CompositeTestCase(TestCase):
             self.assertSetEqual(set(), composite.components)
 
     def test_delegate(self):
+        """
+        Test the delegate method.
 
+        @raise AssertionError: If the test fails
+        """
         composite = Composite(self.component_class)
         composite_two = Composite(self.component_class)
         composite_three = Composite(self.component_class)
@@ -90,7 +102,7 @@ class CompositeTestCase(TestCase):
         composite_two.add_component(composite_three)
         composite.add_component(composite_two)
 
-        composite.delegate('do_something')
+        composite._delegate('do_something')
 
         self.assertTrue(self.leaf_one.did_something)
         self.assertTrue(self.leaf_two.did_something)
@@ -101,7 +113,11 @@ class CompositeTestCase(TestCase):
         self.leaf_three.did_something = False
 
     def test_getattr(self):
+        """
+        Test the getattr method.
 
+        @raise AssertionError: If the test fails.
+        """
         composite = Composite(self.component_class)
         composite_two = Composite(self.component_class)
         composite_three = Composite(self.component_class)
@@ -124,7 +140,11 @@ class CompositeTestCase(TestCase):
         self.leaf_three.did_something = False
 
     def test_invalid_getattr(self):
+        """
+        Test the getattr method with an invalid attribute.
 
+        @raise AssertionError: If the test fails.
+        """
         composite = Composite(self.component_class)
         composite_two = Composite(self.component_class)
         composite_three = Composite(self.component_class)
@@ -141,12 +161,19 @@ class CompositeTestCase(TestCase):
             composite.did_something()
 
     def test_interface(self):
+        """
+        Test the interface functionality.
 
+        @raise AssertionError: If the test fails.
+        """
         class BadComponent(object):
             def foo(self):
                 raise NotImplementedError()
 
         class BadLeaf(BadComponent):
+            def __init__(self):
+                pass
+
             def foo(self):
                 pass
 
@@ -157,4 +184,3 @@ class CompositeTestCase(TestCase):
         self.assertRaises(AttributeError, composite_two.add_component, self.leaf_one)
         self.assertRaises(AttributeError, composite.add_component, composite_two)
         self.assertRaises(AttributeError, composite.add_component, BadLeaf())
-
