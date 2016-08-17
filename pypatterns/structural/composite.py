@@ -1,5 +1,3 @@
-
-
 class Composite(object):
     """
     Composite class as part of the Composite pattern.
@@ -10,7 +8,6 @@ class Composite(object):
         """
         self.components = set()
         self.interface = interface
-        self._method_names = [method for method in dir(interface) if callable(getattr(interface, method))]
 
     def add_component(self, component):
         """
@@ -18,14 +15,19 @@ class Composite(object):
 
         @param component: The component to add to this Composite
         """
-        component_methods = [method for method in dir(component) if callable(getattr(component, method))]
-        for method_name in self._method_names:
-            if method_name in component_methods:
-                continue
+        valid = False
+        try:
+            if component.interface == self.interface:
+                valid = True
+        except AttributeError:
+            if self.interface in component.__class__.__mro__:
+                valid = True
+        finally:
+            if valid:
+                self.components.add(component)
             else:
-                raise AttributeError
-        else:
-            self.components.add(component)
+                raise AttributeError('Component {0} does not follow this composites interface {1}'.format(
+                    component.__class__, self.interface))
 
     def remove_component(self, component):
         """

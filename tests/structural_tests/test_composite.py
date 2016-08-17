@@ -17,15 +17,7 @@ class CompositeTestCase(TestCase):
             def do_something(self):
                 pass
 
-        class LeafOne(Component):
-
-            def __init__(self):
-                self.did_something = False
-
-            def do_something(self):
-                self.did_something = True
-
-        class LeafTwo(Component):
+        class Leaf(Component):
 
             def __init__(self):
                 self.did_something = False
@@ -34,50 +26,52 @@ class CompositeTestCase(TestCase):
                 self.did_something = True
 
         self.component_class = Component
-        self.leaf_one = LeafOne()
-        self.leaf_two = LeafTwo()
-
-    def test_init(self):
-
-        composite = Composite(self.component_class)
-
-        self.assertIn('do_something', composite._method_names)
-
-    def test_add_invalid_component(self):
-
-        composite = Composite(self.component_class)
-
-        class BadComponent(object):
-
-            def foo(self):
-                pass
-
-        with self.assertRaises(AttributeError):
-            composite.add_component(BadComponent)
+        self.leaf_one = Leaf()
+        self.leaf_two = Leaf()
+        self.leaf_three = Leaf()
 
     def test_add_component(self):
 
         composite = Composite(self.component_class)
         composite.add_component(self.leaf_one)
-        composite.add_component(self.leaf_two)
+
+        composite_two = Composite(self.component_class)
+        composite_two.add_component(self.leaf_two)
+
+        composite_three = Composite(self.component_class)
+        composite_three.add_component(self.leaf_three)
+
+        composite_two.add_component(composite_three)
+
+        composite.add_component(composite_two)
+
         try:
-            composite.add_component(self.leaf_two)
+            composite.add_component(composite_two)
+            composite_two.add_component(composite_three)
         except:
-            raise AssertionError
+            raise AssertionError()
         else:
-            self.assertSetEqual({self.leaf_one, self.leaf_two}, composite.components)
+            self.assertSetEqual({self.leaf_one, composite_two}, composite.components)
+            self.assertSetEqual({self.leaf_two, composite_three}, composite_two.components)
+            self.assertSetEqual({self.leaf_three}, composite_three.components)
 
     def test_remove_component(self):
 
         composite = Composite(self.component_class)
 
+        composite_two = Composite(self.component_class)
+        composite_two.add_component(self.leaf_one)
+        composite_two.add_component(self.leaf_two)
+
         composite.add_component(self.leaf_one)
         composite.add_component(self.leaf_two)
+        composite.add_component(composite_two)
 
         composite.remove_component(self.leaf_one)
         composite.remove_component(self.leaf_two)
+        composite.remove_component(composite_two)
         try:
-            composite.remove_component(self.leaf_two)
+            composite.remove_component(composite_two)
         except:
             raise AssertionError
         else:
@@ -86,40 +80,81 @@ class CompositeTestCase(TestCase):
     def test_delegate(self):
 
         composite = Composite(self.component_class)
+        composite_two = Composite(self.component_class)
+        composite_three = Composite(self.component_class)
 
         composite.add_component(self.leaf_one)
-        composite.add_component(self.leaf_two)
+        composite_two.add_component(self.leaf_two)
+        composite_three.add_component(self.leaf_three)
+
+        composite_two.add_component(composite_three)
+        composite.add_component(composite_two)
 
         composite.delegate('do_something')
 
         self.assertTrue(self.leaf_one.did_something)
         self.assertTrue(self.leaf_two.did_something)
+        self.assertTrue(self.leaf_three.did_something)
 
         self.leaf_one.did_something = False
         self.leaf_two.did_something = False
+        self.leaf_three.did_something = False
 
     def test_getattr(self):
 
         composite = Composite(self.component_class)
+        composite_two = Composite(self.component_class)
+        composite_three = Composite(self.component_class)
 
         composite.add_component(self.leaf_one)
-        composite.add_component(self.leaf_two)
+        composite_two.add_component(self.leaf_two)
+        composite_three.add_component(self.leaf_three)
+
+        composite_two.add_component(composite_three)
+        composite.add_component(composite_two)
 
         composite.do_something()
 
         self.assertTrue(self.leaf_one.did_something)
         self.assertTrue(self.leaf_two.did_something)
+        self.assertTrue(self.leaf_three.did_something)
 
         self.leaf_one.did_something = False
         self.leaf_two.did_something = False
+        self.leaf_three.did_something = False
 
     def test_invalid_getattr(self):
 
         composite = Composite(self.component_class)
+        composite_two = Composite(self.component_class)
+        composite_three = Composite(self.component_class)
 
         composite.add_component(self.leaf_one)
-        composite.add_component(self.leaf_two)
+        composite_two.add_component(self.leaf_two)
+        composite_three.add_component(self.leaf_three)
+
+        composite_two.add_component(composite_three)
+        composite.add_component(composite_two)
 
         with self.assertRaises(AttributeError):
             composite.foo()
             composite.did_something()
+
+    def test_interface(self):
+
+        class BadComponent(object):
+            def foo(self):
+                raise NotImplementedError()
+
+        class BadLeaf(BadComponent):
+            def foo(self):
+                pass
+
+        composite = Composite(self.component_class)
+        composite_two = Composite(BadComponent)
+        composite_two.add_component(BadLeaf())
+
+        self.assertRaises(AttributeError, composite_two.add_component, self.leaf_one)
+        self.assertRaises(AttributeError, composite.add_component, composite_two)
+        self.assertRaises(AttributeError, composite.add_component, BadLeaf())
+
