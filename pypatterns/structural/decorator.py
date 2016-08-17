@@ -27,5 +27,8 @@ class DecoratorArgs(Decorator, metaclass=ABCMeta):
 
 class Wrap(DecoratorSimple):
 
-    def __call__(self, instance, func, *args, **kwargs):
-        return lambda: self.func(instance, func, *args, **kwargs)
+    def __call__(self, instance, func):
+        def wrapped(*args, **kwargs):
+            return self.func(instance, func, *args, **kwargs)
+
+        return wrapped
