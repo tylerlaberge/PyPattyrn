@@ -1,32 +1,12 @@
 class Null(object):
     """
-    A class for implementing Null objects.
-
-    This class ignores all parameters passed when constructing or
-    calling instances and traps all attribute and method requests.
-    Instances of it always (and reliably) do 'nothing'.
-
-    The code might benefit from implementing some further special
-    Python methods depending on the context in which its instances
-    are used. Especially when comparing and coercing Null objects
-    the respective methods' implementation will depend very much
-    on the environment and, hence, these special methods are not
-    provided here.
-
-    Dinu C. Gherman,
-    August 2001
-    http://code.activestate.com/recipes/68205-null-object-design-pattern/
+    A Null object class as part of the Null object design pattern.
     """
-
-    # object constructing
-
     def __init__(self, *args, **kwargs):
         """
         Ignore parameters.
         """
         pass
-
-    # object calling
 
     def __call__(self, *args, **kwargs):
         """
@@ -34,9 +14,7 @@ class Null(object):
         """
         return self
 
-    # attribute handling
-
-    def __getattr__(self, mname):
+    def __getattr__(self, name):
         """
         Ignore attribute requests.
         """
@@ -53,8 +31,6 @@ class Null(object):
         Ignore deleting attributes.
         """
         return self
-
-    # misc.
 
     def __repr__(self):
         """
