@@ -1,6 +1,6 @@
 import time
 from unittest import TestCase
-from pypatterns.structural.decorator import DecoratorSimple, DecoratorArgs, Wrap
+from pypatterns.structural.decorator import DecoratorSimple, DecoratorComplex, CallWrapper
 
 
 class DecoratorSimpleTestCase(TestCase):
@@ -51,20 +51,20 @@ class DecoratorSimpleTestCase(TestCase):
         self.assertAlmostEqual(2.0, slow_function.end, delta=1.0)
 
 
-class DecoratorArgsTestCase(TestCase):
+class DecoratorComplexTestCase(TestCase):
     """
-    Unit testing class for the DecoratorArgs class.
+    Unit testing class for the DecoratorComplex class.
     """
     def setUp(self):
         """
         Initialize testing data.
         """
-        class Alert(DecoratorArgs):
+        class Alert(DecoratorComplex):
 
             def __init__(self, alert_time):
                 self.alert_time = alert_time
 
-            @Wrap
+            @CallWrapper
             def __call__(self, func, *args, **kwargs):
                 start = time.time()
                 return_val = func(*args, **kwargs)
@@ -81,12 +81,20 @@ class DecoratorArgsTestCase(TestCase):
 
         @raise AssertionError: If the test fails.
         """
-        @self.alert(1)
-        def slow_function():
-            time.sleep(2)
-            return 'foo'
+        class SlowClass(object):
 
-        self.assertEquals(('foo', True), slow_function())
+            @self.alert(1)
+            def slow_function_true(self):
+                time.sleep(2)
+                return 'foo'
+
+            @self.alert(1)
+            def slow_function_false(self):
+                return 'bar'
+
+        slow_class = SlowClass()
+        self.assertEquals(('foo', True), slow_class.slow_function_true())
+        self.assertEquals(('bar', False), slow_class.slow_function_false())
 
     def test_decorate_args(self):
         """
@@ -95,9 +103,53 @@ class DecoratorArgsTestCase(TestCase):
         @raise AssertionError: If the test fails.
         """
 
-        @self.alert(1)
-        def slow_function(n):
-            time.sleep(n)
-            return 'foo'
+        class SlowClass(object):
 
-        self.assertEquals(('foo', True), slow_function(2))
+            @self.alert(1)
+            def slow_function_true(self, n):
+                time.sleep(n)
+                return 'foo'
+
+            @self.alert(1)
+            def slow_function_false(self, n):
+                return n
+
+        slow_class = SlowClass()
+        self.assertEquals(('foo', True), slow_class.slow_function_true(2))
+        self.assertEquals((10, False), slow_class.slow_function_false(10))
+
+
+class WrapTestCase(TestCase):
+    """
+    Unit testing class for the CallWrapper decorator class.
+    """
+    def test_wrap(self):
+        """
+        Test the wrap decorator
+
+        @raise AssertionError: If the test fails.
+        """
+        class SlowClass(DecoratorComplex):
+
+            def __init__(self, sleep_time):
+                self.sleep_time = sleep_time
+                self.end_time = None
+
+            @CallWrapper
+            def __call__(self, func, *args, **kwargs):
+                start_time = time.time()
+                return_val = func(*args, **kwargs)
+                time.sleep(self.sleep_time)
+                end_time = time.time() - start_time
+                self.end_time = end_time
+                return return_val, self.sleep_time, self.end_time
+
+        @SlowClass(1)
+        def hello_world(n):
+            return ['hello world' for _ in range(n)]
+
+        return_val, sleeptime, end_time = hello_world(5)
+
+        self.assertEquals(1, sleeptime)
+        self.assertAlmostEquals(1, end_time, delta=1)
+        self.assertListEqual(['hello world' for _ in range(5)], return_val)
