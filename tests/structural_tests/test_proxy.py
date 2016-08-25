@@ -20,6 +20,15 @@ class ProxyTestCase(TestCase):
             def __init__(self, age):
                 self.age = age
 
+        self.car = Car()
+        self.driver = Driver(17)
+
+    def test_valid_proxy(self):
+        """
+        Test a Proxy class following the same interface as the subject.
+
+        @raise AssertionError: If the test fails.
+        """
         class ProxyCar(Proxy):
 
             def __init__(self, subject, driver):
@@ -32,14 +41,25 @@ class ProxyTestCase(TestCase):
                 else:
                     return 'Driver is too young to drive'
 
-        self.proxy = ProxyCar(Car(), Driver(17))
+        try:
+            proxy = ProxyCar(self.car, self.driver)
+        except AttributeError:
+            raise AssertionError()
+        else:
+            self.assertEqual('drive car', proxy.drive_car())
+            proxy.driver.age = 15
+            self.assertEqual('Driver is too young to drive', proxy.drive_car())
 
-    def test_drive_car(self):
+    def test_invalid_proxy(self):
         """
-        Test the proxy with the drive car method.
+        Test a Proxy class that is not following the same interface as the subject.
 
         @raise AssertionError: If the test fails.
         """
-        self.assertEqual('drive car', self.proxy.drive_car())
-        self.proxy.driver.age = 15
-        self.assertEqual('Driver is too young to drive', self.proxy.drive_car())
+        class ProxyCar(Proxy):
+
+            def __init__(self, subject, driver):
+                super().__init__(subject)
+                self.driver = driver
+
+        self.assertRaises(AttributeError, lambda: ProxyCar(self.car, self.driver))
