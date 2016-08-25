@@ -6,6 +6,8 @@ class Director(object, metaclass=ABCMeta):
     Abstract director class, responsible for using a builder to fully construct an object.
 
     Part of the builder pattern.
+
+    External Builder Pattern documentation: U{https://en.wikipedia.org/wiki/Builder_pattern}
     """
 
     def __init__(self):
@@ -39,6 +41,8 @@ class Builder(object):
     Abstract builder class, responsible for constructing various pieces of an object.
 
     Part of the builder pattern.
+
+    External Builder Pattern documentation: U{https://en.wikipedia.org/wiki/Builder_pattern}
     """
 
     def __init__(self, constructed_object):

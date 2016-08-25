@@ -5,8 +5,9 @@ from .singleton import Singleton
 class Reusable(object):
     """
     An abstract reusable class.
-    """
 
+    External Object Pool Pattern documentation: U{https://en.wikipedia.org/wiki/Object_pool_pattern}
+    """
     def __init__(self):
         """
         Initialize a new Reusable instance.
@@ -24,8 +25,9 @@ class Reusable(object):
 class Pool(object, metaclass=Singleton):
     """
     An Object Pool design pattern implementation.
-    """
 
+    External Object Pool Pattern documentation: U{https://en.wikipedia.org/wiki/Object_pool_pattern}
+    """
     def __init__(self, reusable_class, *args, **kwargs):
         """
         Initialize a new object pool instance.

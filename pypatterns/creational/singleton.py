@@ -3,6 +3,8 @@ class Singleton(type):
     Singleton Metaclass.
 
     Enforces any object using this metaclass to only create a single instance.
+
+    External Singleton Pattern documentation: U{https://en.wikipedia.org/wiki/Singleton_pattern}
     """
     __instance = None
 

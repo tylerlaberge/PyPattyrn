@@ -5,8 +5,9 @@ from types import MethodType
 class Prototype(object):
     """
     Prototype design pattern abstract class.
-    """
 
+    External Prototype Pattern documentation: U{https://en.wikipedia.org/wiki/Prototype_pattern}
+    """
     def prototype(self, **attributes):
         """
         Copy the prototype this object and optionally update attributes.
@@ -22,4 +23,3 @@ class Prototype(object):
                 setattr(obj, attribute, attributes[attribute])
 
         return obj
-
