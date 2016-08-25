@@ -1,7 +1,5 @@
 from unittest import TestCase
-
 from pypatterns.creational.singleton import Singleton
-from tests.utils.dummy import dummy_class_factory
 
 
 class SingletonTestCase(TestCase):
@@ -13,13 +11,19 @@ class SingletonTestCase(TestCase):
         """
         Initialize testing data.
         """
-        self.dummy_class_one = dummy_class_factory(meta_class=Singleton,
-                                                   attributes={},
-                                                   functions={})
+        class DummySingletonOne(object, metaclass=Singleton):
 
-        self.dummy_class_two = dummy_class_factory(meta_class=Singleton,
-                                                   attributes={},
-                                                   functions={})
+            def __init__(self):
+                pass
+
+        class DummySingletonTwo(object, metaclass=Singleton):
+
+            def __init__(self):
+                pass
+
+        self.dummy_class_one = DummySingletonOne
+
+        self.dummy_class_two = DummySingletonTwo
 
     def test_single(self):
         """
