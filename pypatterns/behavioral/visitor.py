@@ -38,11 +38,11 @@ class Visitor(metaclass=ABCMeta):
 
 class Visitee(object):
     """
-    A base class for objects that wish to be able to visit a Visitor class.
+    A base class for objects that wish to be able to be visited by a Visitor class.
     """
     def accept(self, visitor):
         """
-        Visit a visitor with this class instance.
+        Have a visitor visit this class instance.
 
         @param visitor: The visitor to visit.
         @type visitor: Visitor

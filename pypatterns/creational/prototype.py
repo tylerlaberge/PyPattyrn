@@ -7,9 +7,9 @@ class Prototype(object):
     Prototype design pattern abstract class.
     """
 
-    def copy(self, **attributes):
+    def prototype(self, **attributes):
         """
-        Copy this object and optionally update attributes.
+        Copy the prototype this object and optionally update attributes.
 
         @param attributes: Keyword arguments of any attributes you wish to update.
         @return: A copy of this object with the updated attributes.
@@ -22,3 +22,4 @@ class Prototype(object):
                 setattr(obj, attribute, attributes[attribute])
 
         return obj
+

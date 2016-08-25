@@ -20,7 +20,7 @@ class Factory(object, metaclass=ABCMeta):
         pass
 
 
-class AbstractFactory(object):
+class AbstractFactory(Factory):
     """
     Abstract Factory Class.
     """
