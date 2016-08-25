@@ -4,6 +4,8 @@ from abc import ABCMeta
 class Proxy(object, metaclass=ABCMeta):
     """
     Base Proxy class as part of the Proxy design pattern.
+
+    External Proxy Pattern documentation: U{https://en.wikipedia.org/wiki/Proxy_pattern}
     """
     def __init__(self, subject):
         """
@@ -26,12 +28,3 @@ class Proxy(object, metaclass=ABCMeta):
 
             elif not callable(getattr(self._subject, attr, None)) or not callable(getattr(self, attr, None)):
                 raise AttributeError('Subject and Proxy must follow same interface')
-
-
-
-
-
-
-
-
-

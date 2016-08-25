@@ -1,6 +1,8 @@
 class Adapter(object):
     """
     Adapter class as part of the Adapter design pattern.
+
+    External Adapter Pattern Documentation: U{https://en.wikipedia.org/wiki/Adapter_pattern}
     """
     def __init__(self, adaptee, **adapted_methods):
         """
@@ -28,4 +30,3 @@ class Adapter(object):
         Get the adaptee's  __dict__
         """
         return self.__adaptee.__dict__
-
