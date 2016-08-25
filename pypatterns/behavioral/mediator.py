@@ -4,6 +4,8 @@ from collections import defaultdict
 class Mediator(object):
     """
     Mediator class as part of the Mediator design pattern.
+
+    External Mediator Pattern documentation: U{https://en.wikipedia.org/wiki/Mediator_pattern}
     """
     def __init__(self):
         """
@@ -45,4 +47,3 @@ class Mediator(object):
             self.signals[signal_name].remove(receiver)
         except ValueError:
             pass
-

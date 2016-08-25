@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from pypatterns.behavioral.chain import ChainException, ChainLink, Chain
+from pypatterns.behavioral.chain import ChainLink, Chain
 
 
 class ChainLinkTestCase(TestCase):
@@ -66,7 +66,7 @@ class ChainLinkTestCase(TestCase):
         @raise AssertionError: If the test fails.
         """
         handler = self.chain_link_one_class()
-        with self.assertRaises(ChainException):
+        with self.assertRaises(AttributeError):
             handler.handle("foo")
 
 

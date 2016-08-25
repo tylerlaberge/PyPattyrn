@@ -4,6 +4,8 @@ from abc import ABCMeta, abstractmethod
 class Observer(object, metaclass=ABCMeta):
     """
     Abstract Observer class as part of the Observer design pattern.
+
+    External Observer Pattern documentation: U{https://en.wikipedia.org/wiki/Observer_pattern}
     """
     @abstractmethod
     def update(self, **state):
@@ -15,7 +17,9 @@ class Observer(object, metaclass=ABCMeta):
 
 class Observable(object):
     """
-    Base Observable class as part of the Observer design pattern
+    Base Observable class as part of the Observer design pattern.
+
+    External Observer Pattern documentation: U{https://en.wikipedia.org/wiki/Observer_pattern}
     """
     def __init__(self):
         """

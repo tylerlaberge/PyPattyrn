@@ -4,6 +4,8 @@ from abc import ABCMeta, abstractmethod
 class Context(object):
     """
     Context class as part of the Interpreter design pattern.
+
+    External Interpreter Pattern documentation: U{https://en.wikipedia.org/wiki/Interpreter_pattern}
     """
     def __init__(self, in_data):
         """
@@ -18,6 +20,8 @@ class Context(object):
 class Expression(object, metaclass=ABCMeta):
     """
     Abstract Expression class as part of the Interpreter design pattern.
+
+    External Interpreter Pattern documentation: U{https://en.wikipedia.org/wiki/Interpreter_pattern}
     """
     @abstractmethod
     def interpret(self, context):
@@ -33,6 +37,8 @@ class Expression(object, metaclass=ABCMeta):
 class NonTerminalExpression(Expression, metaclass=ABCMeta):
     """
     Base class for the NonTerminalExpression class as part of the Interpreter design pattern.
+
+    External Interpreter Pattern documentation: U{https://en.wikipedia.org/wiki/Interpreter_pattern}
     """
     def __init__(self, **expressions):
         """
@@ -47,6 +53,8 @@ class NonTerminalExpression(Expression, metaclass=ABCMeta):
 class TerminalExpression(Expression, metaclass=ABCMeta):
     """
     Base class for the TerminalExpression class as part of the Interpreter design pattern.
+
+    External Interpreter Pattern documentation: U{https://en.wikipedia.org/wiki/Interpreter_pattern}
     """
     def __init__(self, literal):
         """

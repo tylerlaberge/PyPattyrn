@@ -4,6 +4,8 @@ from abc import ABCMeta, abstractmethod
 class Visitor(metaclass=ABCMeta):
     """
     Abstract Visitor class as part of the Visitor Design Pattern.
+
+    External Visitor Design Pattern documentation: U{https://en.wikipedia.org/wiki/Visitor_pattern}
     """
     def visit(self, node, *args, **kwargs):
         """
@@ -39,6 +41,8 @@ class Visitor(metaclass=ABCMeta):
 class Visitee(object):
     """
     A base class for objects that wish to be able to be visited by a Visitor class.
+
+    External Visitor Design Pattern documentation: U{https://en.wikipedia.org/wiki/Visitor_pattern}
     """
     def accept(self, visitor):
         """

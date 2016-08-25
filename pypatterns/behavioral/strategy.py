@@ -5,6 +5,8 @@ class Strategy(object):
     """
     An abstract Strategy class.
     All strategies should inherit this class.
+
+    External Strategy Pattern documentation: U{https://en.wikipedia.org/wiki/Strategy_pattern}
     """
     __metaclass__ = ABCMeta
 

@@ -1,18 +1,12 @@
 from abc import ABCMeta, abstractmethod
 
 
-class ChainException(Exception):
-    """
-    Exception for when a chain link could not handle a request.
-    """
-    pass
-
-
 class ChainLink(object, metaclass=ABCMeta):
     """
     Abstract ChainLink object as part of the Chain of Responsibility pattern.
-    """
 
+    External Chain of Responsibility Pattern documentation: U{https://en.wikipedia.org/wiki/Chain-of-responsibility_pattern}
+    """
     def __init__(self):
         """
         Initialize a new ChainLink instance.
@@ -34,10 +28,7 @@ class ChainLink(object, metaclass=ABCMeta):
 
         @param request: The request to handle.
         """
-        try:
-            return self.successor.handle(request)
-        except AttributeError:
-            raise ChainException
+        return self.successor.handle(request)
 
     @abstractmethod
     def handle(self, request):
@@ -52,8 +43,9 @@ class ChainLink(object, metaclass=ABCMeta):
 class Chain(object, metaclass=ABCMeta):
     """
     Abstract Chain class as part of the Chain of Responsibility pattern.
-    """
 
+    External Chain of Responsibility Pattern documentation: U{https://en.wikipedia.org/wiki/Chain-of-responsibility_pattern}
+    """
     def __init__(self, chainlink):
         """
         Initialize a new Chain instance.
@@ -70,7 +62,7 @@ class Chain(object, metaclass=ABCMeta):
         """
         try:
             return self.chainlink.handle(request)
-        except ChainException:
+        except AttributeError:
             return self.fail()
 
     @abstractmethod

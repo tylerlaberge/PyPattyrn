@@ -18,8 +18,9 @@ class InvalidInvokerCommandException(Exception):
 class Receiver(object, metaclass=ABCMeta):
     """
     Abstract receiver class as part of the Command pattern.
-    """
 
+    External Command Pattern documentation: U{https://en.wikipedia.org/wiki/Command_pattern}
+    """
     def action(self, name, *args, **kwargs):
         """
         Delegates which method to be called for a desired action.
@@ -38,8 +39,9 @@ class Receiver(object, metaclass=ABCMeta):
 class Command(object, metaclass=ABCMeta):
     """
     Abstract Command class as part of the Command pattern.
-    """
 
+    External Command Pattern documentation: U{https://en.wikipedia.org/wiki/Command_pattern}
+    """
     def __init__(self, receiver):
         """
         Initialize a new command instance.
@@ -67,8 +69,9 @@ class Command(object, metaclass=ABCMeta):
 class Invoker(object, metaclass=ABCMeta):
     """
     Abstract Invoker class as part of the Command pattern.
-    """
 
+    External Command Pattern documentation: U{https://en.wikipedia.org/wiki/Command_pattern}
+    """
     def __init__(self, valid_commands):
         """
         Initialize a new Invoker instance.
