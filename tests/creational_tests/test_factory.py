@@ -79,8 +79,8 @@ class AbstractFactoryTestCase(TestCase):
         class AnimalFactory(AbstractFactory):
             def __init__(self):
                 super().__init__()
-                self._register('cat', CatFactory)
-                self._register('dog', DogFactory)
+                self._register('cat', CatFactory())
+                self._register('dog', DogFactory())
 
             def create(self, animal_type):
                 return self._factories[animal_type].create()

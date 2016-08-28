@@ -7,7 +7,8 @@ class Factory(object, metaclass=ABCMeta):
 
     All Factories should inherit this class and overwrite the create method.
 
-    External Factory Pattern documentation: U{https://en.wikipedia.org/wiki/Factory_method_pattern}
+    - External Usage documentation: U{https://github.com/tylerlaberge/PyPatterns/wiki/Creational-Pattern-Usage}
+    - External Factory Pattern documentation: U{https://en.wikipedia.org/wiki/Factory_method_pattern}
     """
     @abstractmethod
     def create(self, **kwargs):
@@ -21,11 +22,12 @@ class Factory(object, metaclass=ABCMeta):
         pass
 
 
-class AbstractFactory(Factory):
+class AbstractFactory(Factory, metaclass=ABCMeta):
     """
-    Abstract Factory Class.
+    Abstract Factory Class as part of the AbstractFactory design pattern.
 
-    External Abstract Factory Pattern documentation: U{https://en.wikipedia.org/wiki/Abstract_factory_pattern}
+    - External Usage documentation: U{https://github.com/tylerlaberge/PyPatterns/wiki/Creational-Pattern-Usage}
+    - External Abstract Factory Pattern documentation: U{https://en.wikipedia.org/wiki/Abstract_factory_pattern}
     """
     def __init__(self):
         """
@@ -55,4 +57,4 @@ class AbstractFactory(Factory):
         @type key: str
         @param factory: The factory to register to the key.
         """
-        self._factories[str(key)] = factory()
+        self._factories[str(key)] = factory

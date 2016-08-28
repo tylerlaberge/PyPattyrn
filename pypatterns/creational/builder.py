@@ -5,9 +5,8 @@ class Director(object, metaclass=ABCMeta):
     """
     Abstract director class, responsible for using a builder to fully construct an object.
 
-    Part of the builder pattern.
-
-    External Builder Pattern documentation: U{https://en.wikipedia.org/wiki/Builder_pattern}
+    - External Usage documentation: U{https://github.com/tylerlaberge/PyPatterns/wiki/Creational-Pattern-Usage}
+    - External Builder Pattern documentation: U{https://en.wikipedia.org/wiki/Builder_pattern}
     """
 
     def __init__(self):
@@ -19,7 +18,7 @@ class Director(object, metaclass=ABCMeta):
     @abstractmethod
     def construct(self):
         """
-        Abstract class for fully constructing an object.
+        Abstract method for fully constructing an object.
 
         Concrete implementations should override this and use a builder to construct the object.
 
@@ -36,13 +35,12 @@ class Director(object, metaclass=ABCMeta):
         return self.builder.constructed_object
 
 
-class Builder(object):
+class Builder(object, metaclass=ABCMeta):
     """
     Abstract builder class, responsible for constructing various pieces of an object.
 
-    Part of the builder pattern.
-
-    External Builder Pattern documentation: U{https://en.wikipedia.org/wiki/Builder_pattern}
+    - External Usage documentation: U{https://github.com/tylerlaberge/PyPatterns/wiki/Creational-Pattern-Usage}
+    - External Builder Pattern documentation: U{https://en.wikipedia.org/wiki/Builder_pattern}
     """
 
     def __init__(self, constructed_object):
