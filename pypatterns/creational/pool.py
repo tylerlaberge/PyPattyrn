@@ -1,8 +1,10 @@
+from abc import ABCMeta
 from copy import deepcopy
-from .singleton import Singleton
+from pypatterns.creational.singleton import Singleton
+from pypatterns.behavioral.memento import Originator
 
 
-class Reusable(object):
+class Reusable(Originator, metaclass=ABCMeta):
     """
     An abstract reusable class.
 
@@ -12,14 +14,15 @@ class Reusable(object):
         """
         Initialize a new Reusable instance.
         """
-        self.__state = deepcopy(self.__dict__)
+        self.memento = self.commit()
 
     def reset(self):
         """
         Reset this objects state to the state that it was created with.
         """
-        self.__dict__ = deepcopy(self.__state)
-        self.__state = deepcopy(self.__dict__)
+        memento = self.memento
+        self.rollback(deepcopy(memento))
+        self.memento = memento
 
 
 class Pool(object, metaclass=Singleton):

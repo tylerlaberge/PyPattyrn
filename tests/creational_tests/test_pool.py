@@ -17,7 +17,7 @@ class ReusableTestCase(TestCase):
         class Dog(Reusable):
             def __init__(self):
                 self.sound = "woof"
-                super(Dog, self).__init__()
+                super().__init__()
 
         self.dog_class = Dog
 
@@ -38,9 +38,11 @@ class ReusableTestCase(TestCase):
         changed_sound_two = dog.sound
         dog.reset()
         reset_sound_two = dog.sound
-        dog.name = "george"
         dog.reset()
         final_state = deepcopy(dog.__dict__)
+
+        original_state.pop('memento')
+        final_state.pop('memento')
 
         self.assertEquals("woof", original_sound)
         self.assertEquals("bark", changed_sound)
@@ -61,14 +63,13 @@ class PoolTestCase(TestCase):
         """
 
         class Dog(Reusable):
-            def __init__(self, sound, name):
+            def __init__(self, sound):
                 self.sound = sound
-                self.name = name
                 super(Dog, self).__init__()
 
         class DogPool(Pool):
             def __init__(self):
-                super(DogPool, self).__init__(Dog, 'woof', 'george')
+                super(DogPool, self).__init__(Dog, 'woof')
 
         self.dog_pool_class = DogPool
 
@@ -83,7 +84,7 @@ class PoolTestCase(TestCase):
         dog_two = dog_pool.acquire()
         dog_three = dog_pool.acquire()
 
-        self.assertEquals(dog_one.__dict__, dog_two.__dict__, dog_three.__dict__)
+        self.assertEquals(dog_one.sound, dog_two.sound, dog_three.sound)
         self.assertNotEquals(id(dog_one), id(dog_two), id(dog_three))
 
     def test_release(self):
@@ -106,32 +107,6 @@ class PoolTestCase(TestCase):
         dog_four = dog_pool.acquire()
         self.assertEquals(id(dog_two), id(dog_four))
 
-        self.assertEquals(dog_one.__dict__, dog_two.__dict__)
-        self.assertEquals(dog_three.__dict__, dog_four.__dict__)
-        self.assertEquals(dog_one.__dict__, dog_four.__dict__)
-
-    def test_singleton(self):
-        """
-        Test that the pool class is a singleton
-
-        @raise AssertionError: If the test fails.
-        """
-        dog_pool_one = self.dog_pool_class()
-        dog_pool_two = self.dog_pool_class()
-
-        class Cat(Reusable):
-            def __init__(self, sound, name):
-                self.sound = sound
-                self.name = name
-                super().__init__()
-
-        class CatPool(Pool):
-            def __init__(self):
-                super().__init__(Cat, 'meow', 'tom')
-
-        cat_pool_one = CatPool()
-        cat_pool_two = CatPool()
-
-        self.assertEquals(id(dog_pool_one), id(dog_pool_two))
-        self.assertEquals(id(cat_pool_one), id(cat_pool_two))
-        self.assertNotEquals(id(dog_pool_one), id(cat_pool_one))
+        self.assertEquals(dog_one.sound, dog_two.sound)
+        self.assertEquals(dog_three.sound, dog_four.sound)
+        self.assertEquals(dog_one.sound, dog_four.sound)

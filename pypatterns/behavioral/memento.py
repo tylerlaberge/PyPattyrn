@@ -5,7 +5,7 @@ class Memento(object):
     """
     Memento class as part of the Memento design pattern.
 
-    External Mediator Pattern documentation: U{https://en.wikipedia.org/wiki/Memento_pattern}
+    External Memento Pattern documentation: U{https://en.wikipedia.org/wiki/Memento_pattern}
     """
     def __init__(self, state):
         """
