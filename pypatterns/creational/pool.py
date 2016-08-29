@@ -1,6 +1,5 @@
 from abc import ABCMeta
 from copy import deepcopy
-from pypatterns.creational.singleton import Singleton
 from pypatterns.behavioral.memento import Originator
 
 
@@ -25,7 +24,7 @@ class Reusable(Originator, metaclass=ABCMeta):
         self.memento = memento
 
 
-class Pool(object, metaclass=Singleton):
+class Pool(object):
     """
     An Object Pool design pattern implementation.
 
