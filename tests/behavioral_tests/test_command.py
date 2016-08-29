@@ -1,7 +1,6 @@
 from unittest import TestCase
 
-from pypatterns.behavioral.command import InvalidActionException, InvalidInvokerCommandException, \
-    Receiver, Command, Invoker
+from pypatterns.behavioral.command import Receiver, Command, Invoker
 
 
 class ReceiverTestCase(TestCase):
@@ -38,7 +37,7 @@ class ReceiverTestCase(TestCase):
 
         @raise AssertionError: If the test fails.
         """
-        with self.assertRaises(InvalidActionException):
+        with self.assertRaises(AttributeError):
             self.thermostat.action('foo')
 
 
@@ -176,7 +175,7 @@ class InvokerTestCase(TestCase):
             def unexecute(self):
                 return self._receiver.action('turn_off')
 
-        with self.assertRaises(InvalidInvokerCommandException):
+        with self.assertRaises(AttributeError):
             self.worker.execute(TurnOnLightCommand(Light))
 
     def test_undo(self):

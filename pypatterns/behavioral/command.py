@@ -1,20 +1,6 @@
 from abc import ABCMeta, abstractmethod
 
 
-class InvalidActionException(Exception):
-    """
-    Exception for when an invalid action is called on a Receiver.
-    """
-    pass
-
-
-class InvalidInvokerCommandException(Exception):
-    """
-    Exception for when an invalid command is given to an Invoker to execute.
-    """
-    pass
-
-
 class Receiver(object, metaclass=ABCMeta):
     """
     Abstract receiver class as part of the Command pattern.
@@ -33,7 +19,7 @@ class Receiver(object, metaclass=ABCMeta):
         try:
             return getattr(self, name)(*args, **kwargs)
         except AttributeError:
-            raise InvalidActionException
+            raise AttributeError('Invalid Action.')
 
 
 class Command(object, metaclass=ABCMeta):
@@ -89,7 +75,7 @@ class Invoker(object, metaclass=ABCMeta):
         @type command: Command
         """
         if command.__class__ not in self._valid_commands:
-            raise InvalidInvokerCommandException
+            raise AttributeError('Invalid Command')
         else:
             self._history.append(command)
             return command.execute()
