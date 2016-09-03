@@ -12,20 +12,20 @@ class NullTestCase(TestCase):
         """
         self.null = Null()
 
-    def test_constructing(self):
+    def test_init(self):
         """
-        Test constructing a Null object.
+        Test the init method.
 
         @raise AssertionError: If the test fails.
         """
         try:
-            n = Null()
-            n = Null('value')
-            n = Null('value', param='value')
+            Null()
+            Null('value')
+            Null('value', param='value')
         except:
             raise AssertionError()
 
-    def test_calling(self):
+    def test_call(self):
         """
         Test calling a Null object.
 
@@ -35,9 +35,9 @@ class NullTestCase(TestCase):
         self.assertEquals(self.null, self.null('value'))
         self.assertEquals(self.null, self.null('value', param='value'))
 
-    def test_attribute_handling(self):
+    def test_get_attribute(self):
         """
-        Test attribute handling on a Null object.
+        Test getting attributes of a Null object.
 
         @raise AssertionError: If the test fails.
         """
@@ -51,9 +51,25 @@ class NullTestCase(TestCase):
         self.assertEquals(self.null, self.null.attr1.method1())
         self.assertEquals(self.null, self.null.method1().attr1)
 
+    def test_set_attribute(self):
+        """
+        Test setting attributes of a Null object.
+
+        @raise AssertionError: If the test fails.
+        """
         try:
             self.null.attr1 = 'value'
             self.null.attr1.attr2 = 'value'
+        except:
+            raise AssertionError()
+
+    def test_del_attribute(self):
+        """
+        Test deleting an attribute of a Null object.
+
+        @raise AssertionError: If the test fails.
+        """
+        try:
             del self.null.attr1
             del self.null.attr1.attr2.attr3
         except:
