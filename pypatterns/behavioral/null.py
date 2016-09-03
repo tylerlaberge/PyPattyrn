@@ -6,48 +6,69 @@ class Null(object):
     """
     def __init__(self, *args, **kwargs):
         """
-        Ignore parameters.
+        Do nothing.
         """
         pass
 
     def __call__(self, *args, **kwargs):
         """
-        Ignore method calls.
+        Do nothing.
+
+        @return: This object instance.
+        @rtype: Null
         """
         return self
 
     def __getattr__(self, name):
         """
-        Ignore attribute requests.
+        Do nothing.
+
+        @return: This object instance.
+        @rtype: Null
         """
         return self
 
     def __setattr__(self, name, value):
         """
-        Ignore attribute setting.
+        Do nothing.
+
+        @return: This object instance.
+        @rtype: Null
         """
         return self
 
     def __delattr__(self, name):
         """
-        Ignore deleting attributes.
+        Do nothing.
+
+        @return: This object instance.
+        @rtype: Null
         """
         return self
 
     def __repr__(self):
         """
-        Return a string representation.
+        Null object string representation is the empty string.
+
+        @return: An empty string.
+        @rtype: String
         """
         return ''
 
     def __str__(self):
         """
-        Convert to a string and return it.
+        Null object string representation is the empty string.
+
+        @return: An empty string.
+        @rtype: String
         """
         return ''
 
     def __bool__(self):
         """
-        Boolean of Null object is always False.
+        Null object evaluates to False.
+
+        @return: False.
+        @rtype: Boolean
         """
         return False
