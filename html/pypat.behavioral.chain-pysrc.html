@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>pypat.behavioral.chain</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="pypat-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="pypat-module.html">Package&nbsp;pypat</a> ::
+        <a href="pypat.behavioral-module.html">Package&nbsp;behavioral</a> ::
+        Module&nbsp;chain
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="pypat.behavioral.chain-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="pypat.behavioral.chain-module.html">Module pypat.behavioral.chain</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno"> 1</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">abc</tt> <tt class="py-keyword">import</tt> <tt class="py-name">ABCMeta</tt><tt class="py-op">,</tt> <tt class="py-name">abstractmethod</tt> </tt>
+<a name="ChainLink"></a><div id="ChainLink-def"><a name="L2"></a><tt class="py-lineno"> 2</tt>  <tt class="py-line"> </tt>
+<a name="L3"></a><tt class="py-lineno"> 3</tt>  <tt class="py-line"> </tt>
+<a name="L4"></a><tt class="py-lineno"> 4</tt> <a class="py-toggle" href="#" id="ChainLink-toggle" onclick="return toggle('ChainLink');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="pypat.behavioral.chain.ChainLink-class.html">ChainLink</a><tt class="py-op">(</tt><tt class="py-base-class">object</tt><tt class="py-op">,</tt> <tt class="py-base-class">metaclass</tt><tt class="py-op">=</tt><tt class="py-base-class">ABCMeta</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ChainLink-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="ChainLink-expanded"><a name="L5"></a><tt class="py-lineno"> 5</tt>  <tt class="py-line">    <tt class="py-docstring">"""</tt> </tt>
+<a name="L6"></a><tt class="py-lineno"> 6</tt>  <tt class="py-line"><tt class="py-docstring">    Abstract ChainLink object as part of the Chain of Responsibility pattern.</tt> </tt>
+<a name="L7"></a><tt class="py-lineno"> 7</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L8"></a><tt class="py-lineno"> 8</tt>  <tt class="py-line"><tt class="py-docstring">    - External Usage documentation: U{https://github.com/tylerlaberge/PyPatterns/wiki/Behavioral-Pattern-Usage}</tt> </tt>
+<a name="L9"></a><tt class="py-lineno"> 9</tt>  <tt class="py-line"><tt class="py-docstring">    - External Chain of Responsibility Pattern documentation: U{https://en.wikipedia.org/wiki/Chain-of-responsibility_pattern}</tt> </tt>
+<a name="L10"></a><tt class="py-lineno">10</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="ChainLink.__init__"></a><div id="ChainLink.__init__-def"><a name="L11"></a><tt class="py-lineno">11</tt> <a class="py-toggle" href="#" id="ChainLink.__init__-toggle" onclick="return toggle('ChainLink.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pypat.behavioral.chain.ChainLink-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ChainLink.__init__-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="ChainLink.__init__-expanded"><a name="L12"></a><tt class="py-lineno">12</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L13"></a><tt class="py-lineno">13</tt>  <tt class="py-line"><tt class="py-docstring">        Initialize a new ChainLink instance.</tt> </tt>
+<a name="L14"></a><tt class="py-lineno">14</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L15"></a><tt class="py-lineno">15</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">successor</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt> </tt>
+</div><a name="L16"></a><tt class="py-lineno">16</tt>  <tt class="py-line"> </tt>
+<a name="ChainLink.set_successor"></a><div id="ChainLink.set_successor-def"><a name="L17"></a><tt class="py-lineno">17</tt> <a class="py-toggle" href="#" id="ChainLink.set_successor-toggle" onclick="return toggle('ChainLink.set_successor');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pypat.behavioral.chain.ChainLink-class.html#set_successor">set_successor</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">successor</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ChainLink.set_successor-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="ChainLink.set_successor-expanded"><a name="L18"></a><tt class="py-lineno">18</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L19"></a><tt class="py-lineno">19</tt>  <tt class="py-line"><tt class="py-docstring">        Set a chain link to call if this chain link fails.</tt> </tt>
+<a name="L20"></a><tt class="py-lineno">20</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L21"></a><tt class="py-lineno">21</tt>  <tt class="py-line"><tt class="py-docstring">        @param successor: The chain link to call if this chain link fails.</tt> </tt>
+<a name="L22"></a><tt class="py-lineno">22</tt>  <tt class="py-line"><tt class="py-docstring">        @type successor: ChainLink</tt> </tt>
+<a name="L23"></a><tt class="py-lineno">23</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L24"></a><tt class="py-lineno">24</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">successor</tt> <tt class="py-op">=</tt> <tt class="py-name">successor</tt> </tt>
+</div><a name="L25"></a><tt class="py-lineno">25</tt>  <tt class="py-line"> </tt>
+<a name="ChainLink.successor_handle"></a><div id="ChainLink.successor_handle-def"><a name="L26"></a><tt class="py-lineno">26</tt> <a class="py-toggle" href="#" id="ChainLink.successor_handle-toggle" onclick="return toggle('ChainLink.successor_handle');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pypat.behavioral.chain.ChainLink-class.html#successor_handle">successor_handle</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">request</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ChainLink.successor_handle-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="ChainLink.successor_handle-expanded"><a name="L27"></a><tt class="py-lineno">27</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L28"></a><tt class="py-lineno">28</tt>  <tt class="py-line"><tt class="py-docstring">        Have this chain links successor handle a request.</tt> </tt>
+<a name="L29"></a><tt class="py-lineno">29</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L30"></a><tt class="py-lineno">30</tt>  <tt class="py-line"><tt class="py-docstring">        @param request: The request to handle.</tt> </tt>
+<a name="L31"></a><tt class="py-lineno">31</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L32"></a><tt class="py-lineno">32</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">successor</tt><tt class="py-op">.</tt><tt id="link-0" class="py-name" targets="Method pypat.behavioral.chain.Chain.handle()=pypat.behavioral.chain.Chain-class.html#handle,Method pypat.behavioral.chain.ChainLink.handle()=pypat.behavioral.chain.ChainLink-class.html#handle"><a title="pypat.behavioral.chain.Chain.handle
+pypat.behavioral.chain.ChainLink.handle" class="py-name" href="#" onclick="return doclink('link-0', 'handle', 'link-0');">handle</a></tt><tt class="py-op">(</tt><tt class="py-name">request</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L33"></a><tt class="py-lineno">33</tt>  <tt class="py-line"> </tt>
+<a name="L34"></a><tt class="py-lineno">34</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">abstractmethod</tt> </tt>
+<a name="ChainLink.handle"></a><div id="ChainLink.handle-def"><a name="L35"></a><tt class="py-lineno">35</tt> <a class="py-toggle" href="#" id="ChainLink.handle-toggle" onclick="return toggle('ChainLink.handle');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pypat.behavioral.chain.ChainLink-class.html#handle">handle</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">request</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ChainLink.handle-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="ChainLink.handle-expanded"><a name="L36"></a><tt class="py-lineno">36</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L37"></a><tt class="py-lineno">37</tt>  <tt class="py-line"><tt class="py-docstring">        Handle a request.</tt> </tt>
+<a name="L38"></a><tt class="py-lineno">38</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L39"></a><tt class="py-lineno">39</tt>  <tt class="py-line"><tt class="py-docstring">        @param request: The request to handle.</tt> </tt>
+<a name="L40"></a><tt class="py-lineno">40</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L41"></a><tt class="py-lineno">41</tt>  <tt class="py-line">        <tt class="py-keyword">pass</tt> </tt>
+</div></div><a name="L42"></a><tt class="py-lineno">42</tt>  <tt class="py-line"> </tt>
+<a name="Chain"></a><div id="Chain-def"><a name="L43"></a><tt class="py-lineno">43</tt>  <tt class="py-line"> </tt>
+<a name="L44"></a><tt class="py-lineno">44</tt> <a class="py-toggle" href="#" id="Chain-toggle" onclick="return toggle('Chain');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="pypat.behavioral.chain.Chain-class.html">Chain</a><tt class="py-op">(</tt><tt class="py-base-class">object</tt><tt class="py-op">,</tt> <tt class="py-base-class">metaclass</tt><tt class="py-op">=</tt><tt class="py-base-class">ABCMeta</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Chain-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="Chain-expanded"><a name="L45"></a><tt class="py-lineno">45</tt>  <tt class="py-line">    <tt class="py-docstring">"""</tt> </tt>
+<a name="L46"></a><tt class="py-lineno">46</tt>  <tt class="py-line"><tt class="py-docstring">    Abstract Chain class as part of the Chain of Responsibility pattern.</tt> </tt>
+<a name="L47"></a><tt class="py-lineno">47</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L48"></a><tt class="py-lineno">48</tt>  <tt class="py-line"><tt class="py-docstring">    - External Usage documentation: U{https://github.com/tylerlaberge/PyPatterns/wiki/Behavioral-Pattern-Usage}</tt> </tt>
+<a name="L49"></a><tt class="py-lineno">49</tt>  <tt class="py-line"><tt class="py-docstring">    - External Chain of Responsibility Pattern documentation: U{https://en.wikipedia.org/wiki/Chain-of-responsibility_pattern}</tt> </tt>
+<a name="L50"></a><tt class="py-lineno">50</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="Chain.__init__"></a><div id="Chain.__init__-def"><a name="L51"></a><tt class="py-lineno">51</tt> <a class="py-toggle" href="#" id="Chain.__init__-toggle" onclick="return toggle('Chain.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pypat.behavioral.chain.Chain-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">chainlink</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Chain.__init__-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="Chain.__init__-expanded"><a name="L52"></a><tt class="py-lineno">52</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L53"></a><tt class="py-lineno">53</tt>  <tt class="py-line"><tt class="py-docstring">        Initialize a new Chain instance.</tt> </tt>
+<a name="L54"></a><tt class="py-lineno">54</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L55"></a><tt class="py-lineno">55</tt>  <tt class="py-line"><tt class="py-docstring">        @param chainlink: The starting chain link.</tt> </tt>
+<a name="L56"></a><tt class="py-lineno">56</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L57"></a><tt class="py-lineno">57</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">chainlink</tt> <tt class="py-op">=</tt> <tt class="py-name">chainlink</tt> </tt>
+</div><a name="L58"></a><tt class="py-lineno">58</tt>  <tt class="py-line"> </tt>
+<a name="Chain.handle"></a><div id="Chain.handle-def"><a name="L59"></a><tt class="py-lineno">59</tt> <a class="py-toggle" href="#" id="Chain.handle-toggle" onclick="return toggle('Chain.handle');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pypat.behavioral.chain.Chain-class.html#handle">handle</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">request</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Chain.handle-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="Chain.handle-expanded"><a name="L60"></a><tt class="py-lineno">60</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L61"></a><tt class="py-lineno">61</tt>  <tt class="py-line"><tt class="py-docstring">        Handle a request.</tt> </tt>
+<a name="L62"></a><tt class="py-lineno">62</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L63"></a><tt class="py-lineno">63</tt>  <tt class="py-line"><tt class="py-docstring">        @param request: The request to handle.</tt> </tt>
+<a name="L64"></a><tt class="py-lineno">64</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L65"></a><tt class="py-lineno">65</tt>  <tt class="py-line">        <tt class="py-keyword">try</tt><tt class="py-op">:</tt> </tt>
+<a name="L66"></a><tt class="py-lineno">66</tt>  <tt class="py-line">            <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">chainlink</tt><tt class="py-op">.</tt><tt id="link-1" class="py-name"><a title="pypat.behavioral.chain.Chain.handle
+pypat.behavioral.chain.ChainLink.handle" class="py-name" href="#" onclick="return doclink('link-1', 'handle', 'link-0');">handle</a></tt><tt class="py-op">(</tt><tt class="py-name">request</tt><tt class="py-op">)</tt> </tt>
+<a name="L67"></a><tt class="py-lineno">67</tt>  <tt class="py-line">        <tt class="py-keyword">except</tt> <tt class="py-name">AttributeError</tt><tt class="py-op">:</tt> </tt>
+<a name="L68"></a><tt class="py-lineno">68</tt>  <tt class="py-line">            <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-2" class="py-name" targets="Method pypat.behavioral.chain.Chain.fail()=pypat.behavioral.chain.Chain-class.html#fail"><a title="pypat.behavioral.chain.Chain.fail" class="py-name" href="#" onclick="return doclink('link-2', 'fail', 'link-2');">fail</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L69"></a><tt class="py-lineno">69</tt>  <tt class="py-line"> </tt>
+<a name="L70"></a><tt class="py-lineno">70</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">abstractmethod</tt> </tt>
+<a name="Chain.fail"></a><div id="Chain.fail-def"><a name="L71"></a><tt class="py-lineno">71</tt> <a class="py-toggle" href="#" id="Chain.fail-toggle" onclick="return toggle('Chain.fail');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pypat.behavioral.chain.Chain-class.html#fail">fail</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Chain.fail-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="Chain.fail-expanded"><a name="L72"></a><tt class="py-lineno">72</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L73"></a><tt class="py-lineno">73</tt>  <tt class="py-line"><tt class="py-docstring">        The method to call when the chain could not handle a request.</tt> </tt>
+<a name="L74"></a><tt class="py-lineno">74</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L75"></a><tt class="py-lineno">75</tt>  <tt class="py-line">        <tt class="py-keyword">pass</tt> </tt>
+</div></div><a name="L76"></a><tt class="py-lineno">76</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="pypat-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Sat Sep 10 17:28:56 2016
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

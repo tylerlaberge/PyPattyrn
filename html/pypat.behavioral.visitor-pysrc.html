@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>pypat.behavioral.visitor</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="pypat-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="pypat-module.html">Package&nbsp;pypat</a> ::
+        <a href="pypat.behavioral-module.html">Package&nbsp;behavioral</a> ::
+        Module&nbsp;visitor
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="pypat.behavioral.visitor-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="pypat.behavioral.visitor-module.html">Module pypat.behavioral.visitor</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno"> 1</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">abc</tt> <tt class="py-keyword">import</tt> <tt class="py-name">ABCMeta</tt><tt class="py-op">,</tt> <tt class="py-name">abstractmethod</tt> </tt>
+<a name="Visitor"></a><div id="Visitor-def"><a name="L2"></a><tt class="py-lineno"> 2</tt>  <tt class="py-line"> </tt>
+<a name="L3"></a><tt class="py-lineno"> 3</tt>  <tt class="py-line"> </tt>
+<a name="L4"></a><tt class="py-lineno"> 4</tt> <a class="py-toggle" href="#" id="Visitor-toggle" onclick="return toggle('Visitor');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="pypat.behavioral.visitor.Visitor-class.html">Visitor</a><tt class="py-op">(</tt><tt class="py-base-class">metaclass</tt><tt class="py-op">=</tt><tt class="py-base-class">ABCMeta</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Visitor-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="Visitor-expanded"><a name="L5"></a><tt class="py-lineno"> 5</tt>  <tt class="py-line">    <tt class="py-docstring">"""</tt> </tt>
+<a name="L6"></a><tt class="py-lineno"> 6</tt>  <tt class="py-line"><tt class="py-docstring">    Abstract Visitor class as part of the Visitor Design Pattern.</tt> </tt>
+<a name="L7"></a><tt class="py-lineno"> 7</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L8"></a><tt class="py-lineno"> 8</tt>  <tt class="py-line"><tt class="py-docstring">    - External Usage documentation: U{https://github.com/tylerlaberge/PyPatterns/wiki/Behavioral-Pattern-Usage}</tt> </tt>
+<a name="L9"></a><tt class="py-lineno"> 9</tt>  <tt class="py-line"><tt class="py-docstring">    - External Visitor Design Pattern documentation: U{https://en.wikipedia.org/wiki/Visitor_pattern}</tt> </tt>
+<a name="L10"></a><tt class="py-lineno">10</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="Visitor.visit"></a><div id="Visitor.visit-def"><a name="L11"></a><tt class="py-lineno">11</tt> <a class="py-toggle" href="#" id="Visitor.visit-toggle" onclick="return toggle('Visitor.visit');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pypat.behavioral.visitor.Visitor-class.html#visit">visit</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">node</tt><tt class="py-op">,</tt> <tt class="py-op">*</tt><tt class="py-param">args</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-param">kwargs</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Visitor.visit-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="Visitor.visit-expanded"><a name="L12"></a><tt class="py-lineno">12</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L13"></a><tt class="py-lineno">13</tt>  <tt class="py-line"><tt class="py-docstring">        Visit the visitor with some object.</tt> </tt>
+<a name="L14"></a><tt class="py-lineno">14</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L15"></a><tt class="py-lineno">15</tt>  <tt class="py-line"><tt class="py-docstring">        @param node: An object to call a visitor method with.</tt> </tt>
+<a name="L16"></a><tt class="py-lineno">16</tt>  <tt class="py-line"><tt class="py-docstring">        @param args: Arguments to go with the visitor method call.</tt> </tt>
+<a name="L17"></a><tt class="py-lineno">17</tt>  <tt class="py-line"><tt class="py-docstring">        @param kwargs: Keyword arguments to go with the visitor method call.</tt> </tt>
+<a name="L18"></a><tt class="py-lineno">18</tt>  <tt class="py-line"><tt class="py-docstring">        @return: The return value of the method that was called for visiting object.</tt> </tt>
+<a name="L19"></a><tt class="py-lineno">19</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L20"></a><tt class="py-lineno">20</tt>  <tt class="py-line">        <tt class="py-name">method</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt> </tt>
+<a name="L21"></a><tt class="py-lineno">21</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">cls</tt> <tt class="py-keyword">in</tt> <tt class="py-name">node</tt><tt class="py-op">.</tt><tt class="py-name">__class__</tt><tt class="py-op">.</tt><tt class="py-name">__mro__</tt><tt class="py-op">:</tt> </tt>
+<a name="L22"></a><tt class="py-lineno">22</tt>  <tt class="py-line">            <tt class="py-name">method_name</tt> <tt class="py-op">=</tt> <tt class="py-string">'visit_'</tt><tt class="py-op">+</tt><tt class="py-name">cls</tt><tt class="py-op">.</tt><tt class="py-name">__name__</tt><tt class="py-op">.</tt><tt class="py-name">lower</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L23"></a><tt class="py-lineno">23</tt>  <tt class="py-line">            <tt class="py-name">method</tt> <tt class="py-op">=</tt> <tt class="py-name">getattr</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">,</tt> <tt class="py-name">method_name</tt><tt class="py-op">,</tt> <tt class="py-name">None</tt><tt class="py-op">)</tt> </tt>
+<a name="L24"></a><tt class="py-lineno">24</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-name">method</tt><tt class="py-op">:</tt> </tt>
+<a name="L25"></a><tt class="py-lineno">25</tt>  <tt class="py-line">                <tt class="py-keyword">break</tt> </tt>
+<a name="L26"></a><tt class="py-lineno">26</tt>  <tt class="py-line"> </tt>
+<a name="L27"></a><tt class="py-lineno">27</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt class="py-name">method</tt><tt class="py-op">:</tt> </tt>
+<a name="L28"></a><tt class="py-lineno">28</tt>  <tt class="py-line">            <tt class="py-name">method</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-0" class="py-name" targets="Method pypat.behavioral.visitor.Visitor.generic_visit()=pypat.behavioral.visitor.Visitor-class.html#generic_visit"><a title="pypat.behavioral.visitor.Visitor.generic_visit" class="py-name" href="#" onclick="return doclink('link-0', 'generic_visit', 'link-0');">generic_visit</a></tt> </tt>
+<a name="L29"></a><tt class="py-lineno">29</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">method</tt><tt class="py-op">(</tt><tt class="py-name">node</tt><tt class="py-op">,</tt> <tt class="py-op">*</tt><tt class="py-name">args</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-name">kwargs</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L30"></a><tt class="py-lineno">30</tt>  <tt class="py-line"> </tt>
+<a name="L31"></a><tt class="py-lineno">31</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">abstractmethod</tt> </tt>
+<a name="Visitor.generic_visit"></a><div id="Visitor.generic_visit-def"><a name="L32"></a><tt class="py-lineno">32</tt> <a class="py-toggle" href="#" id="Visitor.generic_visit-toggle" onclick="return toggle('Visitor.generic_visit');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pypat.behavioral.visitor.Visitor-class.html#generic_visit">generic_visit</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">node</tt><tt class="py-op">,</tt> <tt class="py-op">*</tt><tt class="py-param">args</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-param">kwargs</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Visitor.generic_visit-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="Visitor.generic_visit-expanded"><a name="L33"></a><tt class="py-lineno">33</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L34"></a><tt class="py-lineno">34</tt>  <tt class="py-line"><tt class="py-docstring">        The method to call if no methods were found for a visiting object.</tt> </tt>
+<a name="L35"></a><tt class="py-lineno">35</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L36"></a><tt class="py-lineno">36</tt>  <tt class="py-line"><tt class="py-docstring">        @param node: An object to call a visitor method with.</tt> </tt>
+<a name="L37"></a><tt class="py-lineno">37</tt>  <tt class="py-line"><tt class="py-docstring">        @param args: Arguments to go with the visitor method call.</tt> </tt>
+<a name="L38"></a><tt class="py-lineno">38</tt>  <tt class="py-line"><tt class="py-docstring">        @param kwargs: Keyword arguments to go with the visitor method call.</tt> </tt>
+<a name="L39"></a><tt class="py-lineno">39</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+</div></div><a name="L40"></a><tt class="py-lineno">40</tt>  <tt class="py-line"> </tt>
+<a name="Visitee"></a><div id="Visitee-def"><a name="L41"></a><tt class="py-lineno">41</tt>  <tt class="py-line"> </tt>
+<a name="L42"></a><tt class="py-lineno">42</tt> <a class="py-toggle" href="#" id="Visitee-toggle" onclick="return toggle('Visitee');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="pypat.behavioral.visitor.Visitee-class.html">Visitee</a><tt class="py-op">(</tt><tt class="py-base-class">object</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Visitee-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="Visitee-expanded"><a name="L43"></a><tt class="py-lineno">43</tt>  <tt class="py-line">    <tt class="py-docstring">"""</tt> </tt>
+<a name="L44"></a><tt class="py-lineno">44</tt>  <tt class="py-line"><tt class="py-docstring">    A base class for objects that wish to be able to be visited by a Visitor class.</tt> </tt>
+<a name="L45"></a><tt class="py-lineno">45</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L46"></a><tt class="py-lineno">46</tt>  <tt class="py-line"><tt class="py-docstring">    - External Usage documentation: U{https://github.com/tylerlaberge/PyPatterns/wiki/Behavioral-Pattern-Usage}</tt> </tt>
+<a name="L47"></a><tt class="py-lineno">47</tt>  <tt class="py-line"><tt class="py-docstring">    - External Visitor Design Pattern documentation: U{https://en.wikipedia.org/wiki/Visitor_pattern}</tt> </tt>
+<a name="L48"></a><tt class="py-lineno">48</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="Visitee.accept"></a><div id="Visitee.accept-def"><a name="L49"></a><tt class="py-lineno">49</tt> <a class="py-toggle" href="#" id="Visitee.accept-toggle" onclick="return toggle('Visitee.accept');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pypat.behavioral.visitor.Visitee-class.html#accept">accept</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">visitor</tt><tt class="py-op">,</tt> <tt class="py-op">*</tt><tt class="py-param">args</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-param">kwargs</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Visitee.accept-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="Visitee.accept-expanded"><a name="L50"></a><tt class="py-lineno">50</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L51"></a><tt class="py-lineno">51</tt>  <tt class="py-line"><tt class="py-docstring">        Have a visitor visit this class instance.</tt> </tt>
+<a name="L52"></a><tt class="py-lineno">52</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L53"></a><tt class="py-lineno">53</tt>  <tt class="py-line"><tt class="py-docstring">        @param visitor: The visitor to visit.</tt> </tt>
+<a name="L54"></a><tt class="py-lineno">54</tt>  <tt class="py-line"><tt class="py-docstring">        @type visitor: Visitor</tt> </tt>
+<a name="L55"></a><tt class="py-lineno">55</tt>  <tt class="py-line"><tt class="py-docstring">        @param args: Any args to send with the visit.</tt> </tt>
+<a name="L56"></a><tt class="py-lineno">56</tt>  <tt class="py-line"><tt class="py-docstring">        @param kwargs: Any kwargs to send with the visit.</tt> </tt>
+<a name="L57"></a><tt class="py-lineno">57</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L58"></a><tt class="py-lineno">58</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt id="link-1" class="py-name" targets="Module pypat.behavioral.visitor=pypat.behavioral.visitor-module.html"><a title="pypat.behavioral.visitor" class="py-name" href="#" onclick="return doclink('link-1', 'visitor', 'link-1');">visitor</a></tt><tt class="py-op">.</tt><tt id="link-2" class="py-name" targets="Method pypat.behavioral.visitor.Visitor.visit()=pypat.behavioral.visitor.Visitor-class.html#visit"><a title="pypat.behavioral.visitor.Visitor.visit" class="py-name" href="#" onclick="return doclink('link-2', 'visit', 'link-2');">visit</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">,</tt> <tt class="py-op">*</tt><tt class="py-name">args</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-name">kwargs</tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L59"></a><tt class="py-lineno">59</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="pypat-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Sat Sep 10 17:28:55 2016
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

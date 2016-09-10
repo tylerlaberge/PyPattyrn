@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>pypat.structural.composite</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="pypat-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="pypat-module.html">Package&nbsp;pypat</a> ::
+        <a href="pypat.structural-module.html">Package&nbsp;structural</a> ::
+        Module&nbsp;composite
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="pypat.structural.composite-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="pypat.structural.composite-module.html">Module pypat.structural.composite</a></h1>
+<pre class="py-src">
+<a name="Composite"></a><div id="Composite-def"><a name="L1"></a><tt class="py-lineno"> 1</tt> <a class="py-toggle" href="#" id="Composite-toggle" onclick="return toggle('Composite');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="pypat.structural.composite.Composite-class.html">Composite</a><tt class="py-op">(</tt><tt class="py-base-class">object</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Composite-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="Composite-expanded"><a name="L2"></a><tt class="py-lineno"> 2</tt>  <tt class="py-line">    <tt class="py-docstring">"""</tt> </tt>
+<a name="L3"></a><tt class="py-lineno"> 3</tt>  <tt class="py-line"><tt class="py-docstring">    Composite class as part of the Composite pattern.</tt> </tt>
+<a name="L4"></a><tt class="py-lineno"> 4</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L5"></a><tt class="py-lineno"> 5</tt>  <tt class="py-line"><tt class="py-docstring">    - External Usage Documentation: U{https://github.com/tylerlaberge/PyPatterns/wiki/Structural-Pattern-Usage}</tt> </tt>
+<a name="L6"></a><tt class="py-lineno"> 6</tt>  <tt class="py-line"><tt class="py-docstring">    - External Composite Pattern documentation: U{https://en.wikipedia.org/wiki/Composite_pattern}</tt> </tt>
+<a name="L7"></a><tt class="py-lineno"> 7</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="Composite.__init__"></a><div id="Composite.__init__-def"><a name="L8"></a><tt class="py-lineno"> 8</tt> <a class="py-toggle" href="#" id="Composite.__init__-toggle" onclick="return toggle('Composite.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pypat.structural.composite.Composite-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">interface</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Composite.__init__-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="Composite.__init__-expanded"><a name="L9"></a><tt class="py-lineno"> 9</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L10"></a><tt class="py-lineno">10</tt>  <tt class="py-line"><tt class="py-docstring">        Initialize a new Composite instance.</tt> </tt>
+<a name="L11"></a><tt class="py-lineno">11</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L12"></a><tt class="py-lineno">12</tt>  <tt class="py-line"><tt class="py-docstring">        @param interface: The interface the all child components must adhere to when added to this composite.</tt> </tt>
+<a name="L13"></a><tt class="py-lineno">13</tt>  <tt class="py-line"><tt class="py-docstring">        @type interface: class</tt> </tt>
+<a name="L14"></a><tt class="py-lineno">14</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L15"></a><tt class="py-lineno">15</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">components</tt> <tt class="py-op">=</tt> <tt class="py-name">set</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L16"></a><tt class="py-lineno">16</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">interface</tt> <tt class="py-op">=</tt> <tt class="py-name">interface</tt> </tt>
+</div><a name="L17"></a><tt class="py-lineno">17</tt>  <tt class="py-line"> </tt>
+<a name="Composite.add_component"></a><div id="Composite.add_component-def"><a name="L18"></a><tt class="py-lineno">18</tt> <a class="py-toggle" href="#" id="Composite.add_component-toggle" onclick="return toggle('Composite.add_component');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pypat.structural.composite.Composite-class.html#add_component">add_component</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">component</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Composite.add_component-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="Composite.add_component-expanded"><a name="L19"></a><tt class="py-lineno">19</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L20"></a><tt class="py-lineno">20</tt>  <tt class="py-line"><tt class="py-docstring">        Add a component to this composite.</tt> </tt>
+<a name="L21"></a><tt class="py-lineno">21</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L22"></a><tt class="py-lineno">22</tt>  <tt class="py-line"><tt class="py-docstring">        @param component: The component to add to this Composite</tt> </tt>
+<a name="L23"></a><tt class="py-lineno">23</tt>  <tt class="py-line"><tt class="py-docstring">        @raise AttributeError: If the component does not adhere to this Composites interface.</tt> </tt>
+<a name="L24"></a><tt class="py-lineno">24</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L25"></a><tt class="py-lineno">25</tt>  <tt class="py-line">        <tt class="py-name">valid</tt> <tt class="py-op">=</tt> <tt class="py-name">False</tt> </tt>
+<a name="L26"></a><tt class="py-lineno">26</tt>  <tt class="py-line">        <tt class="py-keyword">try</tt><tt class="py-op">:</tt> </tt>
+<a name="L27"></a><tt class="py-lineno">27</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-name">component</tt><tt class="py-op">.</tt><tt class="py-name">interface</tt> <tt class="py-op">==</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">interface</tt><tt class="py-op">:</tt> </tt>
+<a name="L28"></a><tt class="py-lineno">28</tt>  <tt class="py-line">                <tt class="py-name">valid</tt> <tt class="py-op">=</tt> <tt class="py-name">True</tt> </tt>
+<a name="L29"></a><tt class="py-lineno">29</tt>  <tt class="py-line">        <tt class="py-keyword">except</tt> <tt class="py-name">AttributeError</tt><tt class="py-op">:</tt> </tt>
+<a name="L30"></a><tt class="py-lineno">30</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">interface</tt> <tt class="py-keyword">in</tt> <tt class="py-name">component</tt><tt class="py-op">.</tt><tt class="py-name">__class__</tt><tt class="py-op">.</tt><tt class="py-name">__mro__</tt><tt class="py-op">:</tt> </tt>
+<a name="L31"></a><tt class="py-lineno">31</tt>  <tt class="py-line">                <tt class="py-name">valid</tt> <tt class="py-op">=</tt> <tt class="py-name">True</tt> </tt>
+<a name="L32"></a><tt class="py-lineno">32</tt>  <tt class="py-line">        <tt class="py-keyword">finally</tt><tt class="py-op">:</tt> </tt>
+<a name="L33"></a><tt class="py-lineno">33</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-name">valid</tt><tt class="py-op">:</tt> </tt>
+<a name="L34"></a><tt class="py-lineno">34</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">components</tt><tt class="py-op">.</tt><tt class="py-name">add</tt><tt class="py-op">(</tt><tt class="py-name">component</tt><tt class="py-op">)</tt> </tt>
+<a name="L35"></a><tt class="py-lineno">35</tt>  <tt class="py-line">            <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L36"></a><tt class="py-lineno">36</tt>  <tt class="py-line">                <tt class="py-keyword">raise</tt> <tt class="py-name">AttributeError</tt><tt class="py-op">(</tt><tt class="py-string">'Component {0} does not follow this composites interface {1}'</tt><tt class="py-op">.</tt><tt class="py-name">format</tt><tt class="py-op">(</tt> </tt>
+<a name="L37"></a><tt class="py-lineno">37</tt>  <tt class="py-line">                    <tt class="py-name">component</tt><tt class="py-op">.</tt><tt class="py-name">__class__</tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">interface</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L38"></a><tt class="py-lineno">38</tt>  <tt class="py-line"> </tt>
+<a name="Composite.remove_component"></a><div id="Composite.remove_component-def"><a name="L39"></a><tt class="py-lineno">39</tt> <a class="py-toggle" href="#" id="Composite.remove_component-toggle" onclick="return toggle('Composite.remove_component');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pypat.structural.composite.Composite-class.html#remove_component">remove_component</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">component</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Composite.remove_component-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="Composite.remove_component-expanded"><a name="L40"></a><tt class="py-lineno">40</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L41"></a><tt class="py-lineno">41</tt>  <tt class="py-line"><tt class="py-docstring">        Remove a component from this composite.</tt> </tt>
+<a name="L42"></a><tt class="py-lineno">42</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L43"></a><tt class="py-lineno">43</tt>  <tt class="py-line"><tt class="py-docstring">        @param component: The component to remove from this Composite.</tt> </tt>
+<a name="L44"></a><tt class="py-lineno">44</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L45"></a><tt class="py-lineno">45</tt>  <tt class="py-line">        <tt class="py-keyword">try</tt><tt class="py-op">:</tt> </tt>
+<a name="L46"></a><tt class="py-lineno">46</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">components</tt><tt class="py-op">.</tt><tt class="py-name">remove</tt><tt class="py-op">(</tt><tt class="py-name">component</tt><tt class="py-op">)</tt> </tt>
+<a name="L47"></a><tt class="py-lineno">47</tt>  <tt class="py-line">        <tt class="py-keyword">except</tt> <tt class="py-name">KeyError</tt><tt class="py-op">:</tt> </tt>
+<a name="L48"></a><tt class="py-lineno">48</tt>  <tt class="py-line">            <tt class="py-keyword">pass</tt> </tt>
+</div><a name="L49"></a><tt class="py-lineno">49</tt>  <tt class="py-line"> </tt>
+<a name="Composite._delegate"></a><div id="Composite._delegate-def"><a name="L50"></a><tt class="py-lineno">50</tt> <a class="py-toggle" href="#" id="Composite._delegate-toggle" onclick="return toggle('Composite._delegate');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pypat.structural.composite.Composite-class.html#_delegate">_delegate</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">func_name</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Composite._delegate-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="Composite._delegate-expanded"><a name="L51"></a><tt class="py-lineno">51</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L52"></a><tt class="py-lineno">52</tt>  <tt class="py-line"><tt class="py-docstring">        Apply a function to all child components by function name.</tt> </tt>
+<a name="L53"></a><tt class="py-lineno">53</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L54"></a><tt class="py-lineno">54</tt>  <tt class="py-line"><tt class="py-docstring">        @param func_name: The name of the function to call with all child components.</tt> </tt>
+<a name="L55"></a><tt class="py-lineno">55</tt>  <tt class="py-line"><tt class="py-docstring">        @type func_name: str</tt> </tt>
+<a name="L56"></a><tt class="py-lineno">56</tt>  <tt class="py-line"><tt class="py-docstring">        @raise AttributeError: If a child component does not have a callable function with the given name.</tt> </tt>
+<a name="L57"></a><tt class="py-lineno">57</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L58"></a><tt class="py-lineno">58</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">component</tt> <tt class="py-keyword">in</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">components</tt><tt class="py-op">:</tt> </tt>
+<a name="L59"></a><tt class="py-lineno">59</tt>  <tt class="py-line">            <tt class="py-name">attribute</tt> <tt class="py-op">=</tt> <tt class="py-name">getattr</tt><tt class="py-op">(</tt><tt class="py-name">component</tt><tt class="py-op">,</tt> <tt class="py-name">func_name</tt><tt class="py-op">)</tt> </tt>
+<a name="L60"></a><tt class="py-lineno">60</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-name">callable</tt><tt class="py-op">(</tt><tt class="py-name">attribute</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L61"></a><tt class="py-lineno">61</tt>  <tt class="py-line">                <tt class="py-name">attribute</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L62"></a><tt class="py-lineno">62</tt>  <tt class="py-line">            <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L63"></a><tt class="py-lineno">63</tt>  <tt class="py-line">                <tt class="py-keyword">raise</tt> <tt class="py-name">AttributeError</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L64"></a><tt class="py-lineno">64</tt>  <tt class="py-line"> </tt>
+<a name="Composite.__getattr__"></a><div id="Composite.__getattr__-def"><a name="L65"></a><tt class="py-lineno">65</tt> <a class="py-toggle" href="#" id="Composite.__getattr__-toggle" onclick="return toggle('Composite.__getattr__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pypat.structural.composite.Composite-class.html#__getattr__">__getattr__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">item</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Composite.__getattr__-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="Composite.__getattr__-expanded"><a name="L66"></a><tt class="py-lineno">66</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L67"></a><tt class="py-lineno">67</tt>  <tt class="py-line"><tt class="py-docstring">        Override getattr to delegate all function calls to children.</tt> </tt>
+<a name="L68"></a><tt class="py-lineno">68</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L69"></a><tt class="py-lineno">69</tt>  <tt class="py-line"><tt class="py-docstring">        @param item: The function to call with this composites children components.</tt> </tt>
+<a name="L70"></a><tt class="py-lineno">70</tt>  <tt class="py-line"><tt class="py-docstring">        @type item: str</tt> </tt>
+<a name="L71"></a><tt class="py-lineno">71</tt>  <tt class="py-line"><tt class="py-docstring">        @return: A function that when called will call all child functions with the given function name.</tt> </tt>
+<a name="L72"></a><tt class="py-lineno">72</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L73"></a><tt class="py-lineno">73</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-keyword">lambda</tt><tt class="py-op">:</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-0" class="py-name" targets="Method pypat.structural.composite.Composite._delegate()=pypat.structural.composite.Composite-class.html#_delegate"><a title="pypat.structural.composite.Composite._delegate" class="py-name" href="#" onclick="return doclink('link-0', '_delegate', 'link-0');">_delegate</a></tt><tt class="py-op">(</tt><tt class="py-name">item</tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L74"></a><tt class="py-lineno">74</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="pypat-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Sat Sep 10 17:28:55 2016
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

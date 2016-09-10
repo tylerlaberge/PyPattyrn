@@ -1,0 +1,38 @@
+<html><head><title>Epydoc Redirect Page</title>
+<meta http-equiv="cache-control" content="no-cache" />
+<meta http-equiv="expires" content="0" />
+<meta http-equiv="pragma" content="no-cache" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+<!--
+var pages = ["pypat.structural.decorator.DecoratorComplex-c", "pypat.structural.decorator.DecoratorSimple-c", "pypat.creational.factory.AbstractFactory-c", "pypat.structural.flyweight.FlyweightMeta-c", "pypat.structural.decorator.CallWrapper-c", "pypat.behavioral.observer.Observable-c", "pypat.creational.prototype.Prototype-c", "pypat.creational.singleton.Singleton-c", "pypat.structural.composite.Composite-c", "pypat.structural.decorator.Decorator-c", "pypat.behavioral.memento.Originator-c", "pypat.behavioral.iterator.Iterable-c", "pypat.behavioral.iterator.Iterator-c", "pypat.behavioral.mediator.Mediator-c", "pypat.behavioral.observer.Observer-c", "pypat.behavioral.command.Receiver-c", "pypat.creational.builder.Director-c", "pypat.behavioral.chain.ChainLink-c", "pypat.behavioral.command.Command-c", "pypat.behavioral.command.Invoker-c", "pypat.behavioral.memento.Memento-c", "pypat.behavioral.visitor.Visitee-c", "pypat.behavioral.visitor.Visitor-c", "pypat.creational.builder.Builder-c", "pypat.creational.factory.Factory-c", "pypat.structural.adapter.Adapter-c", "pypat.creational.pool.Reusable-c", "pypat.behavioral.chain.Chain-c", "pypat.creational.prototype-m", "pypat.creational.singleton-m", "pypat.structural.composite-m", "pypat.structural.decorator-m", "pypat.structural.flyweight-m", "pypat.behavioral.null.Null-c", "pypat.creational.pool.Pool-c", "pypat.behavioral.iterator-m", "pypat.behavioral.mediator-m", "pypat.behavioral.observer-m", "pypat.behavioral.command-m", "pypat.behavioral.memento-m", "pypat.behavioral.visitor-m", "pypat.creational.builder-m", "pypat.creational.factory-m", "pypat.structural.adapter-m", "pypat.behavioral.chain-m", "pypat.behavioral.null-m", "pypat.creational.pool-m", "pypat.behavioral-m", "pypat.creational-m", "pypat.structural-m", "pypat-m"];
+var dottedName = get_anchor();
+if (dottedName) {
+    var target = redirect_url(dottedName);
+    if (target) window.location.replace(target);
+}
+// -->
+</script>
+
+<h3>Epydoc Auto-redirect page</h3>
+
+<p>When javascript is enabled, this page will redirect URLs of
+the form <tt>redirect.html#<i>dotted.name</i></tt> to the
+documentation for the object with the given fully-qualified
+dotted name.</p>
+<p><a id="message"> &nbsp; </a></p>
+
+<script type="text/javascript">
+<!--
+if (dottedName) {
+    var msg = document.getElementById("message");
+    msg.innerHTML = "No documentation found for <tt>"+
+                    dottedName+"</tt>";
+}
+// -->
+</script>
+
+</body>
+</html>

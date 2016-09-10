@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>pypat.structural.flyweight</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="pypat-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="pypat-module.html">Package&nbsp;pypat</a> ::
+        <a href="pypat.structural-module.html">Package&nbsp;structural</a> ::
+        Module&nbsp;flyweight
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="pypat.structural.flyweight-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="pypat.structural.flyweight-module.html">Module pypat.structural.flyweight</a></h1>
+<pre class="py-src">
+<a name="FlyweightMeta"></a><div id="FlyweightMeta-def"><a name="L1"></a><tt class="py-lineno"> 1</tt> <a class="py-toggle" href="#" id="FlyweightMeta-toggle" onclick="return toggle('FlyweightMeta');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="pypat.structural.flyweight.FlyweightMeta-class.html">FlyweightMeta</a><tt class="py-op">(</tt><tt class="py-base-class">type</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="FlyweightMeta-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="FlyweightMeta-expanded"><a name="L2"></a><tt class="py-lineno"> 2</tt>  <tt class="py-line">    <tt class="py-docstring">"""</tt> </tt>
+<a name="L3"></a><tt class="py-lineno"> 3</tt>  <tt class="py-line"><tt class="py-docstring">    Flyweight meta class as part of the Flyweight design pattern.</tt> </tt>
+<a name="L4"></a><tt class="py-lineno"> 4</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L5"></a><tt class="py-lineno"> 5</tt>  <tt class="py-line"><tt class="py-docstring">    - External Usage Documentation: U{https://github.com/tylerlaberge/PyPatterns/wiki/Structural-Pattern-Usage}</tt> </tt>
+<a name="L6"></a><tt class="py-lineno"> 6</tt>  <tt class="py-line"><tt class="py-docstring">    - External Flyweight Pattern documentation: U{https://en.wikipedia.org/wiki/Flyweight_pattern}</tt> </tt>
+<a name="L7"></a><tt class="py-lineno"> 7</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="FlyweightMeta.__new__"></a><div id="FlyweightMeta.__new__-def"><a name="L8"></a><tt class="py-lineno"> 8</tt> <a class="py-toggle" href="#" id="FlyweightMeta.__new__-toggle" onclick="return toggle('FlyweightMeta.__new__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pypat.structural.flyweight.FlyweightMeta-class.html#__new__">__new__</a><tt class="py-op">(</tt><tt class="py-param">mcs</tt><tt class="py-op">,</tt> <tt class="py-param">name</tt><tt class="py-op">,</tt> <tt class="py-param">bases</tt><tt class="py-op">,</tt> <tt class="py-param">attrs</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="FlyweightMeta.__new__-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="FlyweightMeta.__new__-expanded"><a name="L9"></a><tt class="py-lineno"> 9</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L10"></a><tt class="py-lineno">10</tt>  <tt class="py-line"><tt class="py-docstring">        Override class construction to add 'pool' attribute to classes dict.</tt> </tt>
+<a name="L11"></a><tt class="py-lineno">11</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L12"></a><tt class="py-lineno">12</tt>  <tt class="py-line"><tt class="py-docstring">        @param name: The name of the class.</tt> </tt>
+<a name="L13"></a><tt class="py-lineno">13</tt>  <tt class="py-line"><tt class="py-docstring">        @param bases: Base classes of the class.</tt> </tt>
+<a name="L14"></a><tt class="py-lineno">14</tt>  <tt class="py-line"><tt class="py-docstring">        @param attrs: Attributes of the class.</tt> </tt>
+<a name="L15"></a><tt class="py-lineno">15</tt>  <tt class="py-line"><tt class="py-docstring">        @return: A new Class.</tt> </tt>
+<a name="L16"></a><tt class="py-lineno">16</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L17"></a><tt class="py-lineno">17</tt>  <tt class="py-line">        <tt class="py-name">attrs</tt><tt class="py-op">[</tt><tt class="py-string">'pool'</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">dict</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L18"></a><tt class="py-lineno">18</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">super</tt><tt class="py-op">(</tt><tt id="link-0" class="py-name" targets="Class pypat.structural.flyweight.FlyweightMeta=pypat.structural.flyweight.FlyweightMeta-class.html"><a title="pypat.structural.flyweight.FlyweightMeta" class="py-name" href="#" onclick="return doclink('link-0', 'FlyweightMeta', 'link-0');">FlyweightMeta</a></tt><tt class="py-op">,</tt> <tt class="py-name">mcs</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-1" class="py-name" targets="Static Method pypat.structural.flyweight.FlyweightMeta.__new__()=pypat.structural.flyweight.FlyweightMeta-class.html#__new__"><a title="pypat.structural.flyweight.FlyweightMeta.__new__" class="py-name" href="#" onclick="return doclink('link-1', '__new__', 'link-1');">__new__</a></tt><tt class="py-op">(</tt><tt class="py-name">mcs</tt><tt class="py-op">,</tt> <tt class="py-name">name</tt><tt class="py-op">,</tt> <tt class="py-name">bases</tt><tt class="py-op">,</tt> <tt class="py-name">attrs</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L19"></a><tt class="py-lineno">19</tt>  <tt class="py-line"> </tt>
+<a name="L20"></a><tt class="py-lineno">20</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">staticmethod</tt> </tt>
+<a name="FlyweightMeta._serialize"></a><div id="FlyweightMeta._serialize-def"><a name="L21"></a><tt class="py-lineno">21</tt> <a class="py-toggle" href="#" id="FlyweightMeta._serialize-toggle" onclick="return toggle('FlyweightMeta._serialize');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pypat.structural.flyweight.FlyweightMeta-class.html#_serialize">_serialize</a><tt class="py-op">(</tt><tt class="py-param">cls</tt><tt class="py-op">,</tt> <tt class="py-op">*</tt><tt class="py-param">args</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-param">kwargs</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="FlyweightMeta._serialize-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="FlyweightMeta._serialize-expanded"><a name="L22"></a><tt class="py-lineno">22</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L23"></a><tt class="py-lineno">23</tt>  <tt class="py-line"><tt class="py-docstring">        Serialize arguments to a string representation.</tt> </tt>
+<a name="L24"></a><tt class="py-lineno">24</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L25"></a><tt class="py-lineno">25</tt>  <tt class="py-line">        <tt class="py-name">serialized_args</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-name">str</tt><tt class="py-op">(</tt><tt class="py-name">arg</tt><tt class="py-op">)</tt> <tt class="py-keyword">for</tt> <tt class="py-name">arg</tt> <tt class="py-keyword">in</tt> <tt class="py-name">args</tt><tt class="py-op">]</tt> </tt>
+<a name="L26"></a><tt class="py-lineno">26</tt>  <tt class="py-line">        <tt class="py-name">serialized_kwargs</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-name">str</tt><tt class="py-op">(</tt><tt class="py-name">kwargs</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt class="py-name">cls</tt><tt class="py-op">.</tt><tt class="py-name">__name__</tt><tt class="py-op">]</tt> </tt>
+<a name="L27"></a><tt class="py-lineno">27</tt>  <tt class="py-line"> </tt>
+<a name="L28"></a><tt class="py-lineno">28</tt>  <tt class="py-line">        <tt class="py-name">serialized_args</tt><tt class="py-op">.</tt><tt class="py-name">extend</tt><tt class="py-op">(</tt><tt class="py-name">serialized_kwargs</tt><tt class="py-op">)</tt> </tt>
+<a name="L29"></a><tt class="py-lineno">29</tt>  <tt class="py-line"> </tt>
+<a name="L30"></a><tt class="py-lineno">30</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-string">''</tt><tt class="py-op">.</tt><tt class="py-name">join</tt><tt class="py-op">(</tt><tt class="py-name">serialized_args</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L31"></a><tt class="py-lineno">31</tt>  <tt class="py-line"> </tt>
+<a name="FlyweightMeta.__call__"></a><div id="FlyweightMeta.__call__-def"><a name="L32"></a><tt class="py-lineno">32</tt> <a class="py-toggle" href="#" id="FlyweightMeta.__call__-toggle" onclick="return toggle('FlyweightMeta.__call__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pypat.structural.flyweight.FlyweightMeta-class.html#__call__">__call__</a><tt class="py-op">(</tt><tt class="py-param">cls</tt><tt class="py-op">,</tt> <tt class="py-op">*</tt><tt class="py-param">args</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-param">kwargs</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="FlyweightMeta.__call__-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="FlyweightMeta.__call__-expanded"><a name="L33"></a><tt class="py-lineno">33</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L34"></a><tt class="py-lineno">34</tt>  <tt class="py-line"><tt class="py-docstring">        Override call to use objects from a pool if identical parameters are used for object creation.</tt> </tt>
+<a name="L35"></a><tt class="py-lineno">35</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L36"></a><tt class="py-lineno">36</tt>  <tt class="py-line"><tt class="py-docstring">        @param args: Arguments for class instantiation.</tt> </tt>
+<a name="L37"></a><tt class="py-lineno">37</tt>  <tt class="py-line"><tt class="py-docstring">        @param kwargs: Keyword arguments for class instantiation.</tt> </tt>
+<a name="L38"></a><tt class="py-lineno">38</tt>  <tt class="py-line"><tt class="py-docstring">        @return: A new instance of the class.</tt> </tt>
+<a name="L39"></a><tt class="py-lineno">39</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L40"></a><tt class="py-lineno">40</tt>  <tt class="py-line">        <tt class="py-name">key</tt> <tt class="py-op">=</tt> <tt id="link-2" class="py-name"><a title="pypat.structural.flyweight.FlyweightMeta" class="py-name" href="#" onclick="return doclink('link-2', 'FlyweightMeta', 'link-0');">FlyweightMeta</a></tt><tt class="py-op">.</tt><tt id="link-3" class="py-name" targets="Static Method pypat.structural.flyweight.FlyweightMeta._serialize()=pypat.structural.flyweight.FlyweightMeta-class.html#_serialize"><a title="pypat.structural.flyweight.FlyweightMeta._serialize" class="py-name" href="#" onclick="return doclink('link-3', '_serialize', 'link-3');">_serialize</a></tt><tt class="py-op">(</tt><tt class="py-name">cls</tt><tt class="py-op">,</tt> <tt class="py-op">*</tt><tt class="py-name">args</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-name">kwargs</tt><tt class="py-op">)</tt> </tt>
+<a name="L41"></a><tt class="py-lineno">41</tt>  <tt class="py-line">        <tt id="link-4" class="py-name" targets="Module pypat.creational.pool=pypat.creational.pool-module.html"><a title="pypat.creational.pool" class="py-name" href="#" onclick="return doclink('link-4', 'pool', 'link-4');">pool</a></tt> <tt class="py-op">=</tt> <tt class="py-name">getattr</tt><tt class="py-op">(</tt><tt class="py-name">cls</tt><tt class="py-op">,</tt> <tt class="py-string">'pool'</tt><tt class="py-op">,</tt> <tt class="py-op">{</tt><tt class="py-op">}</tt><tt class="py-op">)</tt> </tt>
+<a name="L42"></a><tt class="py-lineno">42</tt>  <tt class="py-line"> </tt>
+<a name="L43"></a><tt class="py-lineno">43</tt>  <tt class="py-line">        <tt class="py-name">instance</tt> <tt class="py-op">=</tt> <tt id="link-5" class="py-name"><a title="pypat.creational.pool" class="py-name" href="#" onclick="return doclink('link-5', 'pool', 'link-4');">pool</a></tt><tt class="py-op">.</tt><tt class="py-name">get</tt><tt class="py-op">(</tt><tt class="py-name">key</tt><tt class="py-op">)</tt> </tt>
+<a name="L44"></a><tt class="py-lineno">44</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt class="py-name">instance</tt><tt class="py-op">:</tt> </tt>
+<a name="L45"></a><tt class="py-lineno">45</tt>  <tt class="py-line">            <tt class="py-name">instance</tt> <tt class="py-op">=</tt> <tt class="py-name">super</tt><tt class="py-op">(</tt><tt id="link-6" class="py-name"><a title="pypat.structural.flyweight.FlyweightMeta" class="py-name" href="#" onclick="return doclink('link-6', 'FlyweightMeta', 'link-0');">FlyweightMeta</a></tt><tt class="py-op">,</tt> <tt class="py-name">cls</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-7" class="py-name" targets="Method pypat.behavioral.null.Null.__call__()=pypat.behavioral.null.Null-class.html#__call__,Method pypat.creational.singleton.Singleton.__call__()=pypat.creational.singleton.Singleton-class.html#__call__,Method pypat.structural.decorator.CallWrapper.__call__()=pypat.structural.decorator.CallWrapper-class.html#__call__,Method pypat.structural.decorator.Decorator.__call__()=pypat.structural.decorator.Decorator-class.html#__call__,Method pypat.structural.decorator.DecoratorComplex.__call__()=pypat.structural.decorator.DecoratorComplex-class.html#__call__,Method pypat.structural.flyweight.FlyweightMeta.__call__()=pypat.structural.flyweight.FlyweightMeta-class.html#__call__"><a title="pypat.behavioral.null.Null.__call__
+pypat.creational.singleton.Singleton.__call__
+pypat.structural.decorator.CallWrapper.__call__
+pypat.structural.decorator.Decorator.__call__
+pypat.structural.decorator.DecoratorComplex.__call__
+pypat.structural.flyweight.FlyweightMeta.__call__" class="py-name" href="#" onclick="return doclink('link-7', '__call__', 'link-7');">__call__</a></tt><tt class="py-op">(</tt><tt class="py-op">*</tt><tt class="py-name">args</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-name">kwargs</tt><tt class="py-op">)</tt> </tt>
+<a name="L46"></a><tt class="py-lineno">46</tt>  <tt class="py-line">            <tt id="link-8" class="py-name"><a title="pypat.creational.pool" class="py-name" href="#" onclick="return doclink('link-8', 'pool', 'link-4');">pool</a></tt><tt class="py-op">[</tt><tt class="py-name">key</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">instance</tt> </tt>
+<a name="L47"></a><tt class="py-lineno">47</tt>  <tt class="py-line"> </tt>
+<a name="L48"></a><tt class="py-lineno">48</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">instance</tt> </tt>
+</div></div><a name="L49"></a><tt class="py-lineno">49</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="pypat-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Sat Sep 10 17:28:56 2016
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>pypat.structural.decorator</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="pypat-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="pypat-module.html">Package&nbsp;pypat</a> ::
+        <a href="pypat.structural-module.html">Package&nbsp;structural</a> ::
+        Module&nbsp;decorator
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="pypat.structural.decorator-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="pypat.structural.decorator-module.html">Module pypat.structural.decorator</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno"> 1</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">functools</tt> <tt class="py-keyword">import</tt> <tt class="py-name">partial</tt> </tt>
+<a name="L2"></a><tt class="py-lineno"> 2</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">abc</tt> <tt class="py-keyword">import</tt> <tt class="py-name">ABCMeta</tt><tt class="py-op">,</tt> <tt class="py-name">abstractmethod</tt> </tt>
+<a name="Decorator"></a><div id="Decorator-def"><a name="L3"></a><tt class="py-lineno"> 3</tt>  <tt class="py-line"> </tt>
+<a name="L4"></a><tt class="py-lineno"> 4</tt>  <tt class="py-line"> </tt>
+<a name="L5"></a><tt class="py-lineno"> 5</tt> <a class="py-toggle" href="#" id="Decorator-toggle" onclick="return toggle('Decorator');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="pypat.structural.decorator.Decorator-class.html">Decorator</a><tt class="py-op">(</tt><tt class="py-base-class">object</tt><tt class="py-op">,</tt> <tt class="py-base-class">metaclass</tt><tt class="py-op">=</tt><tt class="py-base-class">ABCMeta</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Decorator-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="Decorator-expanded"><a name="L6"></a><tt class="py-lineno"> 6</tt>  <tt class="py-line">    <tt class="py-docstring">"""</tt> </tt>
+<a name="L7"></a><tt class="py-lineno"> 7</tt>  <tt class="py-line"><tt class="py-docstring">    Base Decorator class that all decorator classes inherit from.</tt> </tt>
+<a name="L8"></a><tt class="py-lineno"> 8</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L9"></a><tt class="py-lineno"> 9</tt>  <tt class="py-line"><tt class="py-docstring">    - External Usage Documentation: U{https://github.com/tylerlaberge/PyPatterns/wiki/Structural-Pattern-Usage}</tt> </tt>
+<a name="L10"></a><tt class="py-lineno">10</tt>  <tt class="py-line"><tt class="py-docstring">    - External Decorator Pattern documentation: U{https://en.wikipedia.org/wiki/Decorator_pattern}</tt> </tt>
+<a name="L11"></a><tt class="py-lineno">11</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="Decorator.__get__"></a><div id="Decorator.__get__-def"><a name="L12"></a><tt class="py-lineno">12</tt> <a class="py-toggle" href="#" id="Decorator.__get__-toggle" onclick="return toggle('Decorator.__get__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pypat.structural.decorator.Decorator-class.html#__get__">__get__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">instance</tt><tt class="py-op">,</tt> <tt class="py-param">owner</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Decorator.__get__-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="Decorator.__get__-expanded"><a name="L13"></a><tt class="py-lineno">13</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L14"></a><tt class="py-lineno">14</tt>  <tt class="py-line"><tt class="py-docstring">        Override __get__ in order to get the instance of a bound of method call.</tt> </tt>
+<a name="L15"></a><tt class="py-lineno">15</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L16"></a><tt class="py-lineno">16</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">partial</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-0" class="py-name" targets="Method pypat.behavioral.null.Null.__call__()=pypat.behavioral.null.Null-class.html#__call__,Method pypat.creational.singleton.Singleton.__call__()=pypat.creational.singleton.Singleton-class.html#__call__,Method pypat.structural.decorator.CallWrapper.__call__()=pypat.structural.decorator.CallWrapper-class.html#__call__,Method pypat.structural.decorator.Decorator.__call__()=pypat.structural.decorator.Decorator-class.html#__call__,Method pypat.structural.decorator.DecoratorComplex.__call__()=pypat.structural.decorator.DecoratorComplex-class.html#__call__,Method pypat.structural.flyweight.FlyweightMeta.__call__()=pypat.structural.flyweight.FlyweightMeta-class.html#__call__"><a title="pypat.behavioral.null.Null.__call__
+pypat.creational.singleton.Singleton.__call__
+pypat.structural.decorator.CallWrapper.__call__
+pypat.structural.decorator.Decorator.__call__
+pypat.structural.decorator.DecoratorComplex.__call__
+pypat.structural.flyweight.FlyweightMeta.__call__" class="py-name" href="#" onclick="return doclink('link-0', '__call__', 'link-0');">__call__</a></tt><tt class="py-op">,</tt> <tt class="py-name">instance</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L17"></a><tt class="py-lineno">17</tt>  <tt class="py-line"> </tt>
+<a name="L18"></a><tt class="py-lineno">18</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">abstractmethod</tt> </tt>
+<a name="Decorator.__call__"></a><div id="Decorator.__call__-def"><a name="L19"></a><tt class="py-lineno">19</tt> <a class="py-toggle" href="#" id="Decorator.__call__-toggle" onclick="return toggle('Decorator.__call__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pypat.structural.decorator.Decorator-class.html#__call__">__call__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-op">*</tt><tt class="py-param">args</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-param">kwargs</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Decorator.__call__-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="Decorator.__call__-expanded"><a name="L20"></a><tt class="py-lineno">20</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L21"></a><tt class="py-lineno">21</tt>  <tt class="py-line"><tt class="py-docstring">        All decorators must implement a __call__ method.</tt> </tt>
+<a name="L22"></a><tt class="py-lineno">22</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L23"></a><tt class="py-lineno">23</tt>  <tt class="py-line">        <tt class="py-keyword">pass</tt> </tt>
+</div></div><a name="L24"></a><tt class="py-lineno">24</tt>  <tt class="py-line"> </tt>
+<a name="DecoratorSimple"></a><div id="DecoratorSimple-def"><a name="L25"></a><tt class="py-lineno">25</tt>  <tt class="py-line"> </tt>
+<a name="L26"></a><tt class="py-lineno">26</tt> <a class="py-toggle" href="#" id="DecoratorSimple-toggle" onclick="return toggle('DecoratorSimple');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="pypat.structural.decorator.DecoratorSimple-class.html">DecoratorSimple</a><tt class="py-op">(</tt><tt class="py-base-class">Decorator</tt><tt class="py-op">,</tt> <tt class="py-base-class">metaclass</tt><tt class="py-op">=</tt><tt class="py-base-class">ABCMeta</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="DecoratorSimple-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="DecoratorSimple-expanded"><a name="L27"></a><tt class="py-lineno">27</tt>  <tt class="py-line">    <tt class="py-docstring">"""</tt> </tt>
+<a name="L28"></a><tt class="py-lineno">28</tt>  <tt class="py-line"><tt class="py-docstring">    A Base Decorator class for decorators with no arguments.</tt> </tt>
+<a name="L29"></a><tt class="py-lineno">29</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L30"></a><tt class="py-lineno">30</tt>  <tt class="py-line"><tt class="py-docstring">    - External Usage Documentation: U{https://github.com/tylerlaberge/PyPatterns/wiki/Structural-Pattern-Usage}</tt> </tt>
+<a name="L31"></a><tt class="py-lineno">31</tt>  <tt class="py-line"><tt class="py-docstring">    - External Decorator Pattern documentation: U{https://en.wikipedia.org/wiki/Decorator_pattern}</tt> </tt>
+<a name="L32"></a><tt class="py-lineno">32</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="DecoratorSimple.__init__"></a><div id="DecoratorSimple.__init__-def"><a name="L33"></a><tt class="py-lineno">33</tt> <a class="py-toggle" href="#" id="DecoratorSimple.__init__-toggle" onclick="return toggle('DecoratorSimple.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pypat.structural.decorator.DecoratorSimple-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">func</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="DecoratorSimple.__init__-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="DecoratorSimple.__init__-expanded"><a name="L34"></a><tt class="py-lineno">34</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L35"></a><tt class="py-lineno">35</tt>  <tt class="py-line"><tt class="py-docstring">        Initialize a new DecoratorSimple instance.</tt> </tt>
+<a name="L36"></a><tt class="py-lineno">36</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L37"></a><tt class="py-lineno">37</tt>  <tt class="py-line"><tt class="py-docstring">        @param func: The function being decorated.</tt> </tt>
+<a name="L38"></a><tt class="py-lineno">38</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L39"></a><tt class="py-lineno">39</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">func</tt> <tt class="py-op">=</tt> <tt class="py-name">func</tt> </tt>
+</div></div><a name="L40"></a><tt class="py-lineno">40</tt>  <tt class="py-line"> </tt>
+<a name="DecoratorComplex"></a><div id="DecoratorComplex-def"><a name="L41"></a><tt class="py-lineno">41</tt>  <tt class="py-line"> </tt>
+<a name="L42"></a><tt class="py-lineno">42</tt> <a class="py-toggle" href="#" id="DecoratorComplex-toggle" onclick="return toggle('DecoratorComplex');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="pypat.structural.decorator.DecoratorComplex-class.html">DecoratorComplex</a><tt class="py-op">(</tt><tt class="py-base-class">Decorator</tt><tt class="py-op">,</tt> <tt class="py-base-class">metaclass</tt><tt class="py-op">=</tt><tt class="py-base-class">ABCMeta</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="DecoratorComplex-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="DecoratorComplex-expanded"><a name="L43"></a><tt class="py-lineno">43</tt>  <tt class="py-line">    <tt class="py-docstring">"""</tt> </tt>
+<a name="L44"></a><tt class="py-lineno">44</tt>  <tt class="py-line"><tt class="py-docstring">    A Base Decorator class for decorators with arguments.</tt> </tt>
+<a name="L45"></a><tt class="py-lineno">45</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L46"></a><tt class="py-lineno">46</tt>  <tt class="py-line"><tt class="py-docstring">    - External Usage Documentation: U{https://github.com/tylerlaberge/PyPatterns/wiki/Structural-Pattern-Usage}</tt> </tt>
+<a name="L47"></a><tt class="py-lineno">47</tt>  <tt class="py-line"><tt class="py-docstring">    - External Decorator Pattern documentation: U{https://en.wikipedia.org/wiki/Decorator_pattern}</tt> </tt>
+<a name="L48"></a><tt class="py-lineno">48</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L49"></a><tt class="py-lineno">49</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">abstractmethod</tt> </tt>
+<a name="DecoratorComplex.__init__"></a><div id="DecoratorComplex.__init__-def"><a name="L50"></a><tt class="py-lineno">50</tt> <a class="py-toggle" href="#" id="DecoratorComplex.__init__-toggle" onclick="return toggle('DecoratorComplex.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pypat.structural.decorator.DecoratorComplex-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-op">*</tt><tt class="py-param">args</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-param">kwargs</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="DecoratorComplex.__init__-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="DecoratorComplex.__init__-expanded"><a name="L51"></a><tt class="py-lineno">51</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L52"></a><tt class="py-lineno">52</tt>  <tt class="py-line"><tt class="py-docstring">        Initialize a new DecoratorComplex instance.</tt> </tt>
+<a name="L53"></a><tt class="py-lineno">53</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L54"></a><tt class="py-lineno">54</tt>  <tt class="py-line"><tt class="py-docstring">        @param args: Args for the decorator.</tt> </tt>
+<a name="L55"></a><tt class="py-lineno">55</tt>  <tt class="py-line"><tt class="py-docstring">        @param kwargs: Keyword args for the decorator.</tt> </tt>
+<a name="L56"></a><tt class="py-lineno">56</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L57"></a><tt class="py-lineno">57</tt>  <tt class="py-line">        <tt class="py-keyword">pass</tt> </tt>
+</div><a name="L58"></a><tt class="py-lineno">58</tt>  <tt class="py-line"> </tt>
+<a name="L59"></a><tt class="py-lineno">59</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">abstractmethod</tt> </tt>
+<a name="DecoratorComplex.__call__"></a><div id="DecoratorComplex.__call__-def"><a name="L60"></a><tt class="py-lineno">60</tt> <a class="py-toggle" href="#" id="DecoratorComplex.__call__-toggle" onclick="return toggle('DecoratorComplex.__call__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pypat.structural.decorator.DecoratorComplex-class.html#__call__">__call__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">func</tt><tt class="py-op">,</tt> <tt class="py-op">*</tt><tt class="py-param">args</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-param">kwargs</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="DecoratorComplex.__call__-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="DecoratorComplex.__call__-expanded"><a name="L61"></a><tt class="py-lineno">61</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L62"></a><tt class="py-lineno">62</tt>  <tt class="py-line"><tt class="py-docstring">        Concrete DecoratorComplex instances must override the __call__ method.</tt> </tt>
+<a name="L63"></a><tt class="py-lineno">63</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L64"></a><tt class="py-lineno">64</tt>  <tt class="py-line"><tt class="py-docstring">        @param func: The function being decorated.</tt> </tt>
+<a name="L65"></a><tt class="py-lineno">65</tt>  <tt class="py-line"><tt class="py-docstring">        @param args: Arguments for the decorated function.</tt> </tt>
+<a name="L66"></a><tt class="py-lineno">66</tt>  <tt class="py-line"><tt class="py-docstring">        @param kwargs: Keyword arguments for the decorated function.</tt> </tt>
+<a name="L67"></a><tt class="py-lineno">67</tt>  <tt class="py-line"><tt class="py-docstring">        @return:</tt> </tt>
+<a name="L68"></a><tt class="py-lineno">68</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L69"></a><tt class="py-lineno">69</tt>  <tt class="py-line">        <tt class="py-keyword">pass</tt> </tt>
+</div></div><a name="L70"></a><tt class="py-lineno">70</tt>  <tt class="py-line"> </tt>
+<a name="CallWrapper"></a><div id="CallWrapper-def"><a name="L71"></a><tt class="py-lineno">71</tt>  <tt class="py-line"> </tt>
+<a name="L72"></a><tt class="py-lineno">72</tt> <a class="py-toggle" href="#" id="CallWrapper-toggle" onclick="return toggle('CallWrapper');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="pypat.structural.decorator.CallWrapper-class.html">CallWrapper</a><tt class="py-op">(</tt><tt class="py-base-class">DecoratorSimple</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="CallWrapper-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="CallWrapper-expanded"><a name="L73"></a><tt class="py-lineno">73</tt>  <tt class="py-line">    <tt class="py-docstring">"""</tt> </tt>
+<a name="L74"></a><tt class="py-lineno">74</tt>  <tt class="py-line"><tt class="py-docstring">    A Decorator for wrapping DecoratorComplex __call__ methods.</tt> </tt>
+<a name="L75"></a><tt class="py-lineno">75</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L76"></a><tt class="py-lineno">76</tt>  <tt class="py-line"><tt class="py-docstring">    - External Usage Documentation: U{https://github.com/tylerlaberge/PyPatterns/wiki/Structural-Pattern-Usage}</tt> </tt>
+<a name="L77"></a><tt class="py-lineno">77</tt>  <tt class="py-line"><tt class="py-docstring">    - External Decorator Pattern documentation: U{https://en.wikipedia.org/wiki/Decorator_pattern}</tt> </tt>
+<a name="L78"></a><tt class="py-lineno">78</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="CallWrapper.__call__"></a><div id="CallWrapper.__call__-def"><a name="L79"></a><tt class="py-lineno">79</tt> <a class="py-toggle" href="#" id="CallWrapper.__call__-toggle" onclick="return toggle('CallWrapper.__call__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pypat.structural.decorator.CallWrapper-class.html#__call__">__call__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">instance</tt><tt class="py-op">,</tt> <tt class="py-param">func</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="CallWrapper.__call__-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="CallWrapper.__call__-expanded"><a name="L80"></a><tt class="py-lineno">80</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L81"></a><tt class="py-lineno">81</tt>  <tt class="py-line"><tt class="py-docstring">        Wrap a concrete DecoratorComplex __call__ method.</tt> </tt>
+<a name="L82"></a><tt class="py-lineno">82</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L83"></a><tt class="py-lineno">83</tt>  <tt class="py-line">        <tt class="py-keyword">def</tt> <tt class="py-def-name">wrapped</tt><tt class="py-op">(</tt><tt class="py-op">*</tt><tt class="py-param">args</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-param">kwargs</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L84"></a><tt class="py-lineno">84</tt>  <tt class="py-line">            <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">func</tt><tt class="py-op">(</tt><tt class="py-name">instance</tt><tt class="py-op">,</tt> <tt class="py-name">func</tt><tt class="py-op">,</tt> <tt class="py-op">*</tt><tt class="py-name">args</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-name">kwargs</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L85"></a><tt class="py-lineno">85</tt>  <tt class="py-line"> </tt>
+<a name="L86"></a><tt class="py-lineno">86</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">wrapped</tt> </tt>
+</div></div><a name="L87"></a><tt class="py-lineno">87</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="pypat-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Sat Sep 10 17:28:55 2016
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>
