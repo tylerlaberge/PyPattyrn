@@ -6,7 +6,8 @@ class Prototype(object):
     """
     Prototype design pattern abstract class.
 
-    External Prototype Pattern documentation: U{https://en.wikipedia.org/wiki/Prototype_pattern}
+    - External Usage documentation: U{https://github.com/tylerlaberge/PyPatterns/wiki/Creational-Pattern-Usage}
+    - External Prototype Pattern documentation: U{https://en.wikipedia.org/wiki/Prototype_pattern}
     """
     def prototype(self, **attributes):
         """

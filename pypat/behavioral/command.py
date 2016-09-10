@@ -5,7 +5,8 @@ class Receiver(object, metaclass=ABCMeta):
     """
     Abstract receiver class as part of the Command pattern.
 
-    External Command Pattern documentation: U{https://en.wikipedia.org/wiki/Command_pattern}
+    - External Usage documentation: U{https://github.com/tylerlaberge/PyPatterns/wiki/Behavioral-Pattern-Usage}
+    - External Command Pattern documentation: U{https://en.wikipedia.org/wiki/Command_pattern}
     """
     def action(self, name, *args, **kwargs):
         """
@@ -26,7 +27,8 @@ class Command(object, metaclass=ABCMeta):
     """
     Abstract Command class as part of the Command pattern.
 
-    External Command Pattern documentation: U{https://en.wikipedia.org/wiki/Command_pattern}
+    - External Usage documentation: U{https://github.com/tylerlaberge/PyPatterns/wiki/Behavioral-Pattern-Usage}
+    - External Command Pattern documentation: U{https://en.wikipedia.org/wiki/Command_pattern}
     """
     def __init__(self, receiver):
         """
@@ -56,7 +58,8 @@ class Invoker(object, metaclass=ABCMeta):
     """
     Abstract Invoker class as part of the Command pattern.
 
-    External Command Pattern documentation: U{https://en.wikipedia.org/wiki/Command_pattern}
+    - External Usage documentation: U{https://github.com/tylerlaberge/PyPatterns/wiki/Behavioral-Pattern-Usage}
+    - External Command Pattern documentation: U{https://en.wikipedia.org/wiki/Command_pattern}
     """
     def __init__(self, valid_commands):
         """

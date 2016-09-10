@@ -5,7 +5,8 @@ class Observer(object, metaclass=ABCMeta):
     """
     Abstract Observer class as part of the Observer design pattern.
 
-    External Observer Pattern documentation: U{https://en.wikipedia.org/wiki/Observer_pattern}
+    - External Usage documentation: U{https://github.com/tylerlaberge/PyPatterns/wiki/Behavioral-Pattern-Usage}
+    - External Observer Pattern documentation: U{https://en.wikipedia.org/wiki/Observer_pattern}
     """
     @abstractmethod
     def update(self, **state):
@@ -19,7 +20,8 @@ class Observable(object):
     """
     Base Observable class as part of the Observer design pattern.
 
-    External Observer Pattern documentation: U{https://en.wikipedia.org/wiki/Observer_pattern}
+    - External Usage documentation: U{https://github.com/tylerlaberge/PyPatterns/wiki/Behavioral-Pattern-Usage}
+    - External Observer Pattern documentation: U{https://en.wikipedia.org/wiki/Observer_pattern}
     """
     def __init__(self):
         """

@@ -2,7 +2,8 @@ class Adapter(object):
     """
     Adapter class as part of the Adapter design pattern.
 
-    External Adapter Pattern Documentation: U{https://en.wikipedia.org/wiki/Adapter_pattern}
+    - External Usage Documentation: U{https://github.com/tylerlaberge/PyPatterns/wiki/Structural-Pattern-Usage}
+    - External Adapter Pattern Documentation: U{https://en.wikipedia.org/wiki/Adapter_pattern}
     """
     def __init__(self, adaptee, **adapted_methods):
         """

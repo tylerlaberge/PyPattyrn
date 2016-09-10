@@ -6,7 +6,8 @@ class Decorator(object, metaclass=ABCMeta):
     """
     Base Decorator class that all decorator classes inherit from.
 
-    External Decorator Pattern documentation: U{https://en.wikipedia.org/wiki/Decorator_pattern}
+    - External Usage Documentation: U{https://github.com/tylerlaberge/PyPatterns/wiki/Structural-Pattern-Usage}
+    - External Decorator Pattern documentation: U{https://en.wikipedia.org/wiki/Decorator_pattern}
     """
     def __get__(self, instance, owner):
         """
@@ -26,7 +27,8 @@ class DecoratorSimple(Decorator, metaclass=ABCMeta):
     """
     A Base Decorator class for decorators with no arguments.
 
-    External Decorator Pattern documentation: U{https://en.wikipedia.org/wiki/Decorator_pattern}
+    - External Usage Documentation: U{https://github.com/tylerlaberge/PyPatterns/wiki/Structural-Pattern-Usage}
+    - External Decorator Pattern documentation: U{https://en.wikipedia.org/wiki/Decorator_pattern}
     """
     def __init__(self, func):
         """
@@ -41,7 +43,8 @@ class DecoratorComplex(Decorator, metaclass=ABCMeta):
     """
     A Base Decorator class for decorators with arguments.
 
-    External Decorator Pattern documentation: U{https://en.wikipedia.org/wiki/Decorator_pattern}
+    - External Usage Documentation: U{https://github.com/tylerlaberge/PyPatterns/wiki/Structural-Pattern-Usage}
+    - External Decorator Pattern documentation: U{https://en.wikipedia.org/wiki/Decorator_pattern}
     """
     @abstractmethod
     def __init__(self, *args, **kwargs):
@@ -70,7 +73,8 @@ class CallWrapper(DecoratorSimple):
     """
     A Decorator for wrapping DecoratorComplex __call__ methods.
 
-    External Decorator Pattern documentation: U{https://en.wikipedia.org/wiki/Decorator_pattern}
+    - External Usage Documentation: U{https://github.com/tylerlaberge/PyPatterns/wiki/Structural-Pattern-Usage}
+    - External Decorator Pattern documentation: U{https://en.wikipedia.org/wiki/Decorator_pattern}
     """
     def __call__(self, instance, func):
         """

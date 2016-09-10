@@ -5,7 +5,8 @@ class Iterator(object):
     """
     An Iterator class for the Iterator design pattern.
 
-    External Iterator Pattern documentation: U{https://en.wikipedia.org/wiki/Iterator_pattern}
+    - External Usage documentation: U{https://github.com/tylerlaberge/PyPatterns/wiki/Behavioral-Pattern-Usage}
+    - External Iterator Pattern documentation: U{https://en.wikipedia.org/wiki/Iterator_pattern}
     """
     def __init__(self, iterable):
         """
@@ -27,7 +28,8 @@ class Iterable(object, metaclass=ABCMeta):
     """
     An abstract class representing an Iterable object as part of the Iterator design pattern.
 
-    External Iterator Pattern documentation: U{https://en.wikipedia.org/wiki/Iterator_pattern}
+    - External Usage documentation: U{https://github.com/tylerlaberge/PyPatterns/wiki/Behavioral-Pattern-Usage}
+    - External Iterator Pattern documentation: U{https://en.wikipedia.org/wiki/Iterator_pattern}
     """
     @abstractmethod
     def __next__(self):

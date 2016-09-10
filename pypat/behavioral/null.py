@@ -2,7 +2,8 @@ class Null(object):
     """
     A Null object class as part of the Null object design pattern.
 
-    External Null Object Pattern documentation: U{https://en.wikipedia.org/wiki/Null_Object_pattern}
+    - External Usage documentation: U{https://github.com/tylerlaberge/PyPatterns/wiki/Behavioral-Pattern-Usage}
+    - External Null Object Pattern documentation: U{https://en.wikipedia.org/wiki/Null_Object_pattern}
     """
     def __init__(self, *args, **kwargs):
         """

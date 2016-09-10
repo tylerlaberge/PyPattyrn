@@ -4,7 +4,8 @@ class Singleton(type):
 
     Enforces any object using this metaclass to only create a single instance.
 
-    External Singleton Pattern documentation: U{https://en.wikipedia.org/wiki/Singleton_pattern}
+    - External Usage documentation: U{https://github.com/tylerlaberge/PyPatterns/wiki/Creational-Pattern-Usage}
+    - External Singleton Pattern documentation: U{https://en.wikipedia.org/wiki/Singleton_pattern}
     """
     __instance = None
 

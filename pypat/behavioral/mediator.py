@@ -5,7 +5,8 @@ class Mediator(object):
     """
     Mediator class as part of the Mediator design pattern.
 
-    External Mediator Pattern documentation: U{https://en.wikipedia.org/wiki/Mediator_pattern}
+    - External Usage documentation: U{https://github.com/tylerlaberge/PyPatterns/wiki/Behavioral-Pattern-Usage}
+    - External Mediator Pattern documentation: U{https://en.wikipedia.org/wiki/Mediator_pattern}
     """
     def __init__(self):
         """
