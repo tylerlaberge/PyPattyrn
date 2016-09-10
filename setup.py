@@ -7,7 +7,7 @@ setup(
     author='Tyler LaBerge',
     author_email='tyler.laberge@maine.edu',
     url='https://github.com/tylerlaberge/PyPat',
-    download_url='https://github.com/tylerlaberge/PyPat/tarball/1.0',
+    download_url='https://github.com/tylerlaberge/PyPat/tarball/v1.0',
     keywords=['design', 'pattern', 'patterns'],
     classifiers=[],
     packages=[
