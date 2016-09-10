@@ -7,6 +7,7 @@ class FlyweightMeta(type):
     def __new__(mcs, name, bases, attrs):
         """
         Override class construction to add 'pool' attribute to classes dict.
+
         @param name: The name of the class.
         @param bases: Base classes of the class.
         @param attrs: Attributes of the class.
@@ -16,15 +17,16 @@ class FlyweightMeta(type):
         return super(FlyweightMeta, mcs).__new__(mcs, name, bases, attrs)
 
     @staticmethod
-    def _serialize_params(cls, *args, **kwargs):
+    def _serialize(cls, *args, **kwargs):
         """
-        Serialize input parameters to a key.
-        Simple implementation is just to serialize it as a string
+        Serialize arguments to a string representation.
         """
-        args_list = [str(arg) for arg in args]
-        args_list.extend([str(kwargs), cls.__name__])
-        key = ''.join(args_list)
-        return key
+        serialized_args = [str(arg) for arg in args]
+        serialized_kwargs = [str(kwargs), cls.__name__]
+
+        serialized_args.extend(serialized_kwargs)
+
+        return ''.join(serialized_args)
 
     def __call__(cls, *args, **kwargs):
         """
@@ -34,7 +36,7 @@ class FlyweightMeta(type):
         @param kwargs: Keyword arguments for class instantiation.
         @return: A new instance of the class.
         """
-        key = FlyweightMeta._serialize_params(cls, *args, **kwargs)
+        key = FlyweightMeta._serialize(cls, *args, **kwargs)
         pool = getattr(cls, 'pool', {})
 
         instance = pool.get(key)
