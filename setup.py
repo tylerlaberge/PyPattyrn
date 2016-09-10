@@ -2,9 +2,14 @@ from distutils.core import setup
 
 setup(
     name='pypat',
-    version='0.1',
+    version='1.0',
     description='Python Design Patterns',
     author='Tyler LaBerge',
+    author_email='tyler.laberge@maine.edu',
+    url='https://github.com/tylerlaberge/PyPat',
+    download_url='https://github.com/tylerlaberge/PyPat/tarball/1.0',
+    keywords=['design', 'pattern', 'patterns'],
+    classifiers=[],
     packages=[
         'pypat',
         'pypat.creational',
