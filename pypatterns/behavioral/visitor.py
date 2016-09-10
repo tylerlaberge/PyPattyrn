@@ -44,11 +44,13 @@ class Visitee(object):
 
     External Visitor Design Pattern documentation: U{https://en.wikipedia.org/wiki/Visitor_pattern}
     """
-    def accept(self, visitor):
+    def accept(self, visitor, *args, **kwargs):
         """
         Have a visitor visit this class instance.
 
         @param visitor: The visitor to visit.
         @type visitor: Visitor
+        @param args: Any args to send with the visit.
+        @param kwargs: Any kwargs to send with the visit.
         """
-        return visitor.visit(self)
+        return visitor.visit(self, *args, **kwargs)
