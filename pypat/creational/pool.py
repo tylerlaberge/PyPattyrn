@@ -1,6 +1,6 @@
 from abc import ABCMeta
 from copy import deepcopy
-from pypatterns.behavioral.memento import Originator
+from pypat.behavioral.memento import Originator
 
 
 class Reusable(Originator, metaclass=ABCMeta):

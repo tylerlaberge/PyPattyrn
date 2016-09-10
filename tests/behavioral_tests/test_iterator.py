@@ -1,5 +1,5 @@
 from unittest import TestCase
-from pypatterns.behavioral.iterator import Iterable, Iterator
+from pypat.behavioral.iterator import Iterable, Iterator
 
 
 class IterableTestCase(TestCase):

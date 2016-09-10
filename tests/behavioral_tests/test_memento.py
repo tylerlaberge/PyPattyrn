@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from pypatterns.behavioral.memento import Memento, Originator
+from pypat.behavioral.memento import Memento, Originator
 
 
 class MementoTestCase(TestCase):

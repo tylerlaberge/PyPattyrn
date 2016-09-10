@@ -1,5 +1,5 @@
 from unittest import TestCase
-from pypatterns.behavioral.null import Null
+from pypat.behavioral.null import Null
 
 
 class NullTestCase(TestCase):

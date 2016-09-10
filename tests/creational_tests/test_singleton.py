@@ -1,5 +1,5 @@
 from unittest import TestCase
-from pypatterns.creational.singleton import Singleton
+from pypat.creational.singleton import Singleton
 
 
 class SingletonTestCase(TestCase):

@@ -1,7 +1,7 @@
 from unittest import TestCase
 
 from copy import deepcopy
-from pypatterns.creational.pool import Reusable, Pool
+from pypat.creational.pool import Reusable, Pool
 
 
 class ReusableTestCase(TestCase):

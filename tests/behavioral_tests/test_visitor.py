@@ -1,5 +1,5 @@
 from unittest import TestCase
-from pypatterns.behavioral.visitor import Visitor, Visitee
+from pypat.behavioral.visitor import Visitor, Visitee
 
 
 class VisitorTestCase(TestCase):

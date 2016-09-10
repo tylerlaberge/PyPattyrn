@@ -1,7 +1,7 @@
 from math import sqrt
 from unittest import TestCase
 
-from pypatterns.creational.prototype import Prototype
+from pypat.creational.prototype import Prototype
 
 
 class PrototypeTestCase(TestCase):

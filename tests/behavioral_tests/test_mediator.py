@@ -1,5 +1,5 @@
 from unittest import TestCase
-from pypatterns.behavioral.mediator import Mediator
+from pypat.behavioral.mediator import Mediator
 
 
 class MediatorTestCase(TestCase):

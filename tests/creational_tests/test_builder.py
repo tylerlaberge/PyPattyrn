@@ -1,7 +1,7 @@
 from unittest import TestCase
 
 from abc import ABCMeta, abstractmethod
-from pypatterns.creational.builder import Director, Builder
+from pypat.creational.builder import Director, Builder
 
 
 class BuilderTestCase(TestCase):
