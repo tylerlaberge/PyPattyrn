@@ -1,5 +1,5 @@
 from unittest import TestCase
-from pypat.structural.adapter import Adapter
+from pypattyrn.structural.adapter import Adapter
 
 
 class AdapterTestCase(TestCase):

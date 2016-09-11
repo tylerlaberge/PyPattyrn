@@ -1,6 +1,6 @@
 from abc import ABCMeta, abstractmethod
 from unittest import TestCase
-from pypat.structural.composite import Composite
+from pypattyrn.structural.composite import Composite
 
 
 class CompositeTestCase(TestCase):

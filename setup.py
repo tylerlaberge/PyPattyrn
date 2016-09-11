@@ -1,20 +1,20 @@
 from distutils.core import setup
 
 setup(
-    name='pypat',
-    version='1.1',
-    description='Python Design Patterns',
+    name='pypattyrn',
+    version='1.2',
+    description='Design Pattern Templates for Python',
     author='Tyler LaBerge',
     author_email='tyler.laberge@maine.edu',
-    url='https://github.com/tylerlaberge/PyPat',
-    download_url='https://github.com/tylerlaberge/PyPat/tarball/v1.1',
-    keywords=['design', 'pattern', 'patterns'],
+    url='https://github.com/tylerlaberge/PyPattyrn',
+    download_url='https://github.com/tylerlaberge/PyPattyrn/tarball/v1.2',
+    keywords=['design', 'pattern', 'patterns', 'pattyrn', 'template'],
     classifiers=[],
     packages=[
-        'pypat',
-        'pypat.creational',
-        'pypat.behavioral',
-        'pypat.structural'
+        'pypattyrn',
+        'pypattyrn.creational',
+        'pypattyrn.behavioral',
+        'pypattyrn.structural'
     ],
 )
 

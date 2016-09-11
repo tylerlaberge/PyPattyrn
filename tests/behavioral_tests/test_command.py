@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from pypat.behavioral.command import Receiver, Command, Invoker
+from pypattyrn.behavioral.command import Receiver, Command, Invoker
 
 
 class ReceiverTestCase(TestCase):

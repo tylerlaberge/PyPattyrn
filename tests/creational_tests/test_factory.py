@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from pypat.creational.factory import Factory, AbstractFactory
+from pypattyrn.creational.factory import Factory, AbstractFactory
 
 
 class FactoryTestCase(TestCase):

@@ -1,5 +1,5 @@
 from unittest import TestCase
-from pypat.structural.flyweight import FlyweightMeta
+from pypattyrn.structural.flyweight import FlyweightMeta
 
 
 class FlyweightMetaTestCase(TestCase):

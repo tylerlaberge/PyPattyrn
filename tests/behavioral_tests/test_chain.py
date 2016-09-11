@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from pypat.behavioral.chain import ChainLink, Chain
+from pypattyrn.behavioral.chain import ChainLink, Chain
 
 
 class ChainLinkTestCase(TestCase):

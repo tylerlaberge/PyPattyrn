@@ -1,5 +1,5 @@
 from unittest import TestCase
-from pypat.behavioral.observer import Observer, Observable
+from pypattyrn.behavioral.observer import Observer, Observable
 
 
 class ObserverTestCase(TestCase):

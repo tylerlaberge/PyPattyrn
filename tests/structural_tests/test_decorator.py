@@ -1,6 +1,6 @@
 import time
 from unittest import TestCase
-from pypat.structural.decorator import DecoratorSimple, DecoratorComplex, CallWrapper
+from pypattyrn.structural.decorator import DecoratorSimple, DecoratorComplex, CallWrapper
 
 
 class DecoratorSimpleTestCase(TestCase):
