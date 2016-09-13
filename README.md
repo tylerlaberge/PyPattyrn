@@ -12,4 +12,5 @@ Installation:
 or
 
     git clone https://github.com/tylerlaberge/PyPattyrn.git
+    cd PyPattyrn
     python setup.py install
