@@ -62,6 +62,7 @@ or
 
 <h3>Examples</h3>
 <h4>Behavioral Patterns</h4>
+<p>Patterns which deal with communication between objects.</p>
 <h5>Chain of Responsibility Pattern</h5>
 
 ```python
@@ -476,6 +477,7 @@ assert "visit_d D args: ('foo', 'bar') kwargs: {'foobar': 'foobar'}" == node_d.a
 ```
 
 <h4>Creational Patterns</h4>
+<p>Patterns which deal with object creation.</p>
 <h5>Builder Pattern</h5>
 
 ```python
@@ -767,6 +769,7 @@ assert id(dummy_class_one_instance_two) != id(dummy_class_two_instance_two)
 ```
 
 <h4>Structural Patterns</h4>
+<p>Patterns which deal with object composition</p>
 <h5>Adapter Pattern</h5>
 
 ```python
