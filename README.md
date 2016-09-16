@@ -13,41 +13,42 @@ class DummyClass(object, metaclass=Singleton):  #  DummyClass is now a Singleton
 
 <h3>Contents</h3>
 <ul>
-    <li><a href='https://github.com/tylerlaberge/PyPattyrn#pypattyrn'>Installation</a></li>
-    <li><a href='https://github.com/tylerlaberge/PyPattyrn#pypattyrn'>Examples</a>
+    <li><a href='https://github.com/tylerlaberge/PyPattyrn/readme#installation'>Installation</a></li>
+    <li><a href='https://github.com/tylerlaberge/PyPattyrn/readme#examples'>Examples</a>
         <ul>
-            <li><a href='https://github.com/tylerlaberge/PyPattyrn#pypattyrn'>Behavioral Patterns</a>
+            <li><a href='https://github.com/tylerlaberge/PyPattyrn/readme#behavioral-patterns'>Behavioral Patterns</a>
                 <ul>
-                    <li><a href='https://github.com/tylerlaberge/PyPattyrn#pypattyrn'>Chain of Responsibility</a></li>
-                    <li><a href='https://github.com/tylerlaberge/PyPattyrn#pypattyrn'>Command</a></li>
-                    <li><a href='https://github.com/tylerlaberge/PyPattyrn#pypattyrn'>Iterator</a></li>
-                    <li><a href='https://github.com/tylerlaberge/PyPattyrn#pypattyrn'>Mediator</a></li>
-                    <li><a href='https://github.com/tylerlaberge/PyPattyrn#pypattyrn'>Memento</a></li>
-                    <li><a href='https://github.com/tylerlaberge/PyPattyrn#pypattyrn'>Null Object</a></li>
-                    <li><a href='https://github.com/tylerlaberge/PyPattyrn#pypattyrn'>Observer</a></li>
-                    <li><a href='https://github.com/tylerlaberge/PyPattyrn#pypattyrn'>Visitor</a></li>
+                    <li><a href='https://github.com/tylerlaberge/PyPattyrn/readme#chain-of-responsibility-pattern'>Chain of Responsibility</a></li>
+                    <li><a href='https://github.com/tylerlaberge/PyPattyrn/readme#command-pattern'>Command</a></li>
+                    <li><a href='https://github.com/tylerlaberge/PyPattyrn/readme#iterator-pattern'>Iterator</a></li>
+                    <li><a href='https://github.com/tylerlaberge/PyPattyrn/readme#mediator-pattern'>Mediator</a></li>
+                    <li><a href='https://github.com/tylerlaberge/PyPattyrn/readme#memento-pattern'>Memento</a></li>
+                    <li><a href='https://github.com/tylerlaberge/PyPattyrn/readme#null-object-pattern'>Null Object</a></li>
+                    <li><a href='https://github.com/tylerlaberge/PyPattyrn/readme#observer-pattern'>Observer</a></li>
+                    <li><a href='https://github.com/tylerlaberge/PyPattyrn/readme#visitor-pattern'>Visitor</a></li>
                 </ul>
             </li>
-            <li><a href='https://github.com/tylerlaberge/PyPattyrn#pypattyrn'>Creational Patterns</a>
+            <li><a href='https://github.com/tylerlaberge/PyPattyrn/readme#creational-patterns'>Creational Patterns</a>
                 <ul>
-                    <li><a href='https://github.com/tylerlaberge/PyPattyrn#pypattyrn'>Builder</a></li>
-                    <li><a href='https://github.com/tylerlaberge/PyPattyrn#pypattyrn'>Factory</a></li>
-                    <li><a href='https://github.com/tylerlaberge/PyPattyrn#pypattyrn'>Object Pool</a></li>
-                    <li><a href='https://github.com/tylerlaberge/PyPattyrn#pypattyrn'>Prototype</a></li>
-                    <li><a href='https://github.com/tylerlaberge/PyPattyrn#pypattyrn'>Singleton</a></li>
+                    <li><a href='https://github.com/tylerlaberge/PyPattyrn/readme#builder-pattern'>Builder</a></li>
+                    <li><a href='https://github.com/tylerlaberge/PyPattyrn/readme#factory-patternn'>Factory</a></li>
+                    <li><a href='https://github.com/tylerlaberge/PyPattyrn/readme#abstract-factory-pattern'>Abstract Factory</a></li>
+                    <li><a href='https://github.com/tylerlaberge/PyPattyrn/readme#object-pool-pattern'>Object Pool</a></li>
+                    <li><a href='https://github.com/tylerlaberge/PyPattyrn/readme#prototype-pattern'>Prototype</a></li>
+                    <li><a href='https://github.com/tylerlaberge/PyPattyrn/readme#singleton-pattern'>Singleton</a></li>
                 </ul>
             </li>
-            <li><a href='https://github.com/tylerlaberge/PyPattyrn#pypattyrn'>Structural Patterns</a>
+            <li><a href='https://github.com/tylerlaberge/PyPattyrn/readme#structural-patterns'>Structural Patterns</a>
                 <ul>
-                    <li><a href='https://github.com/tylerlaberge/PyPattyrn#pypattyrn'>Adapter</a></li>
-                    <li><a href='https://github.com/tylerlaberge/PyPattyrn#pypattyrn'>Composite</a></li>
-                    <li><a href='https://github.com/tylerlaberge/PyPattyrn#pypattyrn'>Decorator</a></li>
-                    <li><a href='https://github.com/tylerlaberge/PyPattyrn#pypattyrn'>Flyweight</a></li>
+                    <li><a href='https://github.com/tylerlaberge/PyPattyrn/readme#adapter-pattern'>Adapter</a></li>
+                    <li><a href='https://github.com/tylerlaberge/PyPattyrn/readme#composite-pattern'>Composite</a></li>
+                    <li><a href='https://github.com/tylerlaberge/PyPattyrn/readme#decorator-pattern'>Decorator</a></li>
+                    <li><a href='https://github.com/tylerlaberge/PyPattyrn/readme#flyweight-pattern'>Flyweight</a></li>
                 </ul>
             </li>
         </ul>
     </li>
-    <li><a href='https://github.com/tylerlaberge/PyPattyrn#pypattyrn'>Resources</a></li>
+    <li><a href='https://github.com/tylerlaberge/PyPattyrn/readme#resources'>Resources</a></li>
 </ul>
 <h3>Installation</h3>
 
