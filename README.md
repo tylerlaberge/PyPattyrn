@@ -1,5 +1,7 @@
-<h1>PyPattyrn</h1>
-<h3>Design Pattern Templates for Python.</h3>
+# PyPattyrn
+
+### Design Pattern Templates for Python.
+___
 
 ```python
 from pypattyrn.creational.singleton import Singleton
@@ -8,62 +10,61 @@ class DummyClass(object, metaclass=Singleton):  #  DummyClass is now a Singleton
     ...
 ```
 
-<p>PyPattyrn is a python package aiming to make it easier and faster to implement design patterns into your own projects.</p>
-<p>Design patterns by nature cannot be directly translated into code as they are just a description of how to solve a particular problem. However, many of the common design patterns have some boilerplate code that is common throughout all implementations of the pattern. This package captures that common code and makes it easy to use so that you dont have to write it yourself in all your projects.<p>
+PyPattyrn is a python package aiming to make it easier and faster to implement design patterns into your own projects.
 
-<h3>Contents</h3>
-<ul>
-    <li><a href='https://github.com/tylerlaberge/PyPattyrn/readme#installation'>Installation</a></li>
-    <li><a href='https://github.com/tylerlaberge/PyPattyrn/readme#examples'>Examples</a>
-        <ul>
-            <li><a href='https://github.com/tylerlaberge/PyPattyrn/readme#behavioral-patterns'>Behavioral Patterns</a>
-                <ul>
-                    <li><a href='https://github.com/tylerlaberge/PyPattyrn/readme#chain-of-responsibility-pattern'>Chain of Responsibility</a></li>
-                    <li><a href='https://github.com/tylerlaberge/PyPattyrn/readme#command-pattern'>Command</a></li>
-                    <li><a href='https://github.com/tylerlaberge/PyPattyrn/readme#iterator-pattern'>Iterator</a></li>
-                    <li><a href='https://github.com/tylerlaberge/PyPattyrn/readme#mediator-pattern'>Mediator</a></li>
-                    <li><a href='https://github.com/tylerlaberge/PyPattyrn/readme#memento-pattern'>Memento</a></li>
-                    <li><a href='https://github.com/tylerlaberge/PyPattyrn/readme#null-object-pattern'>Null Object</a></li>
-                    <li><a href='https://github.com/tylerlaberge/PyPattyrn/readme#observer-pattern'>Observer</a></li>
-                    <li><a href='https://github.com/tylerlaberge/PyPattyrn/readme#visitor-pattern'>Visitor</a></li>
-                </ul>
-            </li>
-            <li><a href='https://github.com/tylerlaberge/PyPattyrn/readme#creational-patterns'>Creational Patterns</a>
-                <ul>
-                    <li><a href='https://github.com/tylerlaberge/PyPattyrn/readme#builder-pattern'>Builder</a></li>
-                    <li><a href='https://github.com/tylerlaberge/PyPattyrn/readme#factory-patternn'>Factory</a></li>
-                    <li><a href='https://github.com/tylerlaberge/PyPattyrn/readme#abstract-factory-pattern'>Abstract Factory</a></li>
-                    <li><a href='https://github.com/tylerlaberge/PyPattyrn/readme#object-pool-pattern'>Object Pool</a></li>
-                    <li><a href='https://github.com/tylerlaberge/PyPattyrn/readme#prototype-pattern'>Prototype</a></li>
-                    <li><a href='https://github.com/tylerlaberge/PyPattyrn/readme#singleton-pattern'>Singleton</a></li>
-                </ul>
-            </li>
-            <li><a href='https://github.com/tylerlaberge/PyPattyrn/readme#structural-patterns'>Structural Patterns</a>
-                <ul>
-                    <li><a href='https://github.com/tylerlaberge/PyPattyrn/readme#adapter-pattern'>Adapter</a></li>
-                    <li><a href='https://github.com/tylerlaberge/PyPattyrn/readme#composite-pattern'>Composite</a></li>
-                    <li><a href='https://github.com/tylerlaberge/PyPattyrn/readme#decorator-pattern'>Decorator</a></li>
-                    <li><a href='https://github.com/tylerlaberge/PyPattyrn/readme#flyweight-pattern'>Flyweight</a></li>
-                </ul>
-            </li>
-        </ul>
-    </li>
-    <li><a href='https://github.com/tylerlaberge/PyPattyrn/readme#resources'>Resources</a></li>
-</ul>
-<h3>Installation</h3>
+Design patterns by nature cannot be directly translated into code as they are just a description of how to solve a particular problem. However, many of the common design patterns have some boilerplate code that is common throughout all implementations of the pattern. This package captures that common code and makes it easy to use so that you dont have to write it yourself in all your projects.
+___
 
-    pip install pypattyrn
+### Contents
+___
+* [Installation](https://github.com/tylerlaberge/PyPattyrn/readme#installation)
+* [Examples](https://github.com/tylerlaberge/PyPattyrn/readme#examples)
+  * [Behavioral Patterns](https://github.com/tylerlaberge/PyPattyrn/readme#behavioral-patterns)
+    * [Chain of Responsibility](https://github.com/tylerlaberge/PyPattyrn/readme#chain-of-responsibility-pattern)
+    * [Command](https://github.com/tylerlaberge/PyPattyrn/readme#command-pattern)
+    * [Iterator](https://github.com/tylerlaberge/PyPattyrn/readme#iterator-pattern)
+    * [Mediator](https://github.com/tylerlaberge/PyPattyrn/readme#mediator-pattern)
+    * [Memento](https://github.com/tylerlaberge/PyPattyrn/readme#memento-pattern)
+    * [Null Object](https://github.com/tylerlaberge/PyPattyrn/readme#null-object-pattern)
+    * [Observer](https://github.com/tylerlaberge/PyPattyrn/readme#observer-pattern)
+    * [Visitor](https://github.com/tylerlaberge/PyPattyrn/readme#visitor-pattern)
+  * [Creational Patterns](https://github.com/tylerlaberge/PyPattyrn/readme#creational-patterns)
+    * [Builder](https://github.com/tylerlaberge/PyPattyrn/readme#builder-pattern)
+    * [Factory](https://github.com/tylerlaberge/PyPattyrn/readme#factory-pattern)
+    * [Abstract Factory](https://github.com/tylerlaberge/PyPattyrn/readme#abstract-factory-pattern)
+    * [Object Pool](https://github.com/tylerlaberge/PyPattyrn/readme#object-pool-pattern)
+    * [Prototype](https://github.com/tylerlaberge/PyPattyrn/readme#prototype-pattern)
+    * [Singleton](https://github.com/tylerlaberge/PyPattyrn/readme#singleton-pattern)
+  * [Structural Patterns](https://github.com/tylerlaberge/PyPattyrn/readme#structural-patterns)
+    * [Adapter](https://github.com/tylerlaberge/PyPattyrn/readme#adapter-pattern)
+    * [Composite](https://github.com/tylerlaberge/PyPattyrn/readme#composite-pattern)
+    * [Decorator](https://github.com/tylerlaberge/PyPattyrn/readme#decorator-pattern)
+    * [Flyweight](https://github.com/tylerlaberge/PyPattyrn/readme#flyweight-pattern)
+* [Resources](https://github.com/tylerlaberge/PyPattyrn/readme#resources)
+___
+### Installation
+___
+```
+pip install pypattyrn
+```
 
 or
 
-    git clone https://github.com/tylerlaberge/PyPattyrn.git
-    cd PyPattyrn
-    python setup.py install
+```
+git clone https://github.com/tylerlaberge/PyPattyrn.git
+cd PyPattyrn
+python setup.py install
+```
 
-<h3>Examples</h3>
-<h4>Behavioral Patterns</h4>
-<p>Patterns which deal with communication between objects.</p>
-<h5>Chain of Responsibility Pattern</h5>
+___
+### Examples
+___
+
+#### Behavioral Patterns
+
+Patterns which deal with communication between objects.
+___
+##### Chain of Responsibility Pattern
 
 ```python
 from pypattyrn.behavioral.chain import Chain, ChainLink
@@ -129,8 +130,7 @@ assert "Handled in chain link two" == chain.handle("handle_two")
 assert "Handled in chain link three" == chain.handle("handle_three")
 assert "Fail" == chain.handle('handle_four')
 ```
-
-<h5>Command Pattern</h5>
+##### Command Pattern
 
 ```python
 from pypattyrn.behavioral.command import Receiver, Command, Invoker
@@ -194,7 +194,7 @@ assert "Temperature raised by 5 degrees" == worker.execute(RaiseTempCommand(ther
 assert "Temperature lowered by 5 degrees" == worker.undo() # Undo the previous command (Calls the RaiseTempCommand unexecute method.)
 ```
 
-<h5>Iterator Pattern</h5>
+##### Iterator Pattern
 
 ```python
 from pypattyrn.behavioral.iterator import Iterable, Iterator
@@ -225,7 +225,7 @@ for count in counter_iterator: # You can loop through it how you would expect.
     print(count)  # 0, 1, 2, 3, ..., 9
 ```
 
-<h5>Mediator Pattern</h5>
+##### Mediator Pattern
 
 ```python
 from pypattyrn.behavioral.mediator import Mediator
@@ -281,7 +281,7 @@ assert 'woof' == dog.sound
 assert 'bar' == cat.sound
 ```
 
-<h5>Memento Pattern</h5>
+##### Memento Pattern
 
 ```python
 from pypattyrn.behavioral.memento import Originator
@@ -303,7 +303,7 @@ cat.rollback(cat_memento) # Restore the cats state to the memento object we save
 assert 'Tom' == cat.name # The cats name was changed back to 'Tom' as expected.
 ```
 
-<h5>Null Object Pattern</h5>
+##### Null Object Pattern
 
 ```python
 from pypattyrn.behavioral.null import Null
@@ -347,7 +347,7 @@ except:
     raise AssertionError()
 ```
 
-<h5>Observer Pattern</h5>
+##### Observer Pattern
 
 ```python
 from pypattyrn.behavioral.observer import Observable, Observer
@@ -416,7 +416,7 @@ assert sorted(expected_state_2.keys()) == sorted(observer_3.updated_state.keys()
        sorted(expected_state_2.values()) == sorted(observer_3.updated_state.values())
 ```
 
-<h5>Visitor Pattern</h5>
+##### Visitor Pattern
 
 ```python
 from pypattyrn.behavioral.visitor import Visitee, Visitor
@@ -476,9 +476,13 @@ assert "visit_d D args: ('foo', 'bar') kwargs: {'foobar': 'foobar'}" == node_d.a
                                                                                       foobar='foobar')
 ```
 
-<h4>Creational Patterns</h4>
-<p>Patterns which deal with object creation.</p>
-<h5>Builder Pattern</h5>
+___
+#### Creational Patterns
+
+Patterns which deal with object creation.
+___
+
+##### Builder Pattern
 
 ```python
 from pypattyrn.creational.builder import Builder, Director
@@ -546,10 +550,10 @@ house = home_director.get_constructed_object()  # Get the constructed flat.
 print(repr(house))    #Floor: More than one | Size: Small
 ```
 
-<h5>Factory Pattern</h5>
+##### Factory Pattern
 
 ```python
-from pypattyrn.creational.factory import Factory
+from pypattyrn.creational.factory import Factory  # This is just an interface
 
 
 class Cat(object):
@@ -584,7 +588,7 @@ cat.speak()  # 'meow'
 dog.speak()  # 'woof'
 ```
 
-<h5>Abstract Factory Pattern</h5>
+##### Abstract Factory Pattern
 
 ```python
 from pypattyrn.creational.factory import Factory, AbstractFactory
@@ -664,7 +668,7 @@ ant.march()  # 'march'
 fly.fly()  # 'fly'
 ```
 
-<h5>Object Pool Pattern</h5>
+##### Object Pool Pattern
 
 ```python
 from pypattyrn.creational.pool import Reusable, Pool
@@ -700,7 +704,7 @@ assert dog_three.sound == dog_four.sound
 assert dog_one.sound == dog_four.sound
 ```
 
-<h5>Prototype Pattern</h5>
+##### Prototype Pattern
 
 ```python
 from pypattyrn.creational.prototype import Prototype
@@ -737,7 +741,7 @@ assert hasattr(point_four, 'distance_to')
 assert point_four.distance_to(point_three) == 0
 ```
 
-<h5>Singleton Pattern</h5>
+##### Singleton Pattern
 
 ```python
 from pypattyrn.creational.singleton import Singleton
@@ -767,10 +771,14 @@ assert id(dummy_class_two_instance_one) == id(dummy_class_two_instance_two)
 assert id(dummy_class_one_instance_one) != id(dummy_class_two_instance_one)
 assert id(dummy_class_one_instance_two) != id(dummy_class_two_instance_two)
 ```
+___
 
-<h4>Structural Patterns</h4>
-<p>Patterns which deal with object composition</p>
-<h5>Adapter Pattern</h5>
+#### Structural Patterns
+
+Patterns which deal with object composition
+___
+
+##### Adapter Pattern
 
 ```python
 from pypattyrn.structural.adapter import Adapter
@@ -831,7 +839,7 @@ else:
     raise AssertionError()
 ```
 
-<h5>Composite Pattern</h5>
+##### Composite Pattern
 
 ```python
 from pypattyrn.structural.composite import Composite
@@ -887,7 +895,7 @@ assert leaf_two.did_something
 assert not leaf_three.did_something
 ```
 
-<h5>Decorator Pattern</h5>
+##### Decorator Pattern
 
 ```python
 import time
@@ -948,7 +956,7 @@ assert (2, True) == slow_class.slow_function_true(2)
 assert (10, False) == slow_class.slow_function_false(10)
 ```
 
-<h5>Flyweight Pattern</h5>
+##### Flyweight Pattern
 
 ```python
 from pypattyrn.structural.flyweight import FlyweightMeta
@@ -968,9 +976,11 @@ three_of_spades_two = Card('Spade', 3)
 assert id(three_of_spades) == id(three_of_spades_two)
 assert id(three_of_spades) != id(four_of_spades)
 ```
+___
 
-<h4>Resources</h4>
-<ul>
-    <li><a href='https://tylerlaberge.github.io/PyPattyrn/'>API Documentation</a></li>
-    <li><a href='https://sourcemaking.com/design_patterns'>General Design Pattern Information</a>
-<ul>
+#### Resources
+___
+
+* [API Documentation](https://tylerlaberge.github.io/PyPattyrn/)
+* [General Design Pattern Information](https://sourcemaking.com/design_patterns)
+___
