@@ -41,6 +41,7 @@ ___
     * [Decorator](https://github.com/tylerlaberge/PyPattyrn/readme#decorator-pattern)
     * [Flyweight](https://github.com/tylerlaberge/PyPattyrn/readme#flyweight-pattern)
 * [Resources](https://github.com/tylerlaberge/PyPattyrn/readme#resources)
+
 ___
 ### Installation
 ___
@@ -983,4 +984,5 @@ ___
 
 * [API Documentation](https://tylerlaberge.github.io/PyPattyrn/)
 * [General Design Pattern Information](https://sourcemaking.com/design_patterns)
+
 ___
