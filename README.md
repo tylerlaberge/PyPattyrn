@@ -809,6 +809,8 @@ ___
 
 ##### Adapter Pattern
 
+Wrap an object into an interface which the client expects. 
+
 ```python
 from pypattyrn.structural.adapter import Adapter
 
@@ -870,6 +872,8 @@ else:
 
 ##### Composite Pattern
 
+Compose objects into a tree structure of objects that can be treated uniformly.
+
 ```python
 from pypattyrn.structural.composite import Composite
 
@@ -925,6 +929,8 @@ assert not leaf_three.did_something
 ```
 
 ##### Decorator Pattern
+
+Attach additional functionality to functions.
 
 ```python
 import time
@@ -986,6 +992,8 @@ assert (10, False) == slow_class.slow_function_false(10)
 ```
 
 ##### Flyweight Pattern
+
+Share data with other similar objects to increase efficiency.
 
 ```python
 from pypattyrn.structural.flyweight import FlyweightMeta
