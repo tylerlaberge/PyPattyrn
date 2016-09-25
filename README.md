@@ -67,6 +67,8 @@ Patterns which deal with communication between objects.
 ___
 ##### Chain of Responsibility Pattern
 
+Pass a request along a chain of objects until the request is handled.
+
 ```python
 from pypattyrn.behavioral.chain import Chain, ChainLink
 
@@ -133,6 +135,8 @@ assert "Fail" == chain.handle('handle_four')
 ```
 ##### Command Pattern
 
+Encapsulate information for performing an action into an object.
+
 ```python
 from pypattyrn.behavioral.command import Receiver, Command, Invoker
 
@@ -197,6 +201,8 @@ assert "Temperature lowered by 5 degrees" == worker.undo() # Undo the previous c
 
 ##### Iterator Pattern
 
+A way of sequentially accessing elements in a collection.
+
 ```python
 from pypattyrn.behavioral.iterator import Iterable, Iterator
 
@@ -227,6 +233,8 @@ for count in counter_iterator: # You can loop through it how you would expect.
 ```
 
 ##### Mediator Pattern
+
+An intermediary for managing communications between many objects.
 
 ```python
 from pypattyrn.behavioral.mediator import Mediator
@@ -284,6 +292,8 @@ assert 'bar' == cat.sound
 
 ##### Memento Pattern
 
+Save the state of an object and rollback to it at a later time.
+
 ```python
 from pypattyrn.behavioral.memento import Originator
 
@@ -305,6 +315,8 @@ assert 'Tom' == cat.name # The cats name was changed back to 'Tom' as expected.
 ```
 
 ##### Null Object Pattern
+
+Encapsulate the absence of an object into an object with neutral behavior.
 
 ```python
 from pypattyrn.behavioral.null import Null
@@ -349,6 +361,8 @@ except:
 ```
 
 ##### Observer Pattern
+
+Notify many objects when a single object's state changes.
 
 ```python
 from pypattyrn.behavioral.observer import Observable, Observer
@@ -418,6 +432,8 @@ assert sorted(expected_state_2.keys()) == sorted(observer_3.updated_state.keys()
 ```
 
 ##### Visitor Pattern
+
+Add new operations to an existing class without modifying it.
 
 ```python
 from pypattyrn.behavioral.visitor import Visitee, Visitor
