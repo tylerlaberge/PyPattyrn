@@ -501,6 +501,8 @@ ___
 
 ##### Builder Pattern
 
+Separate object construction from its representation.
+
 ```python
 from pypattyrn.creational.builder import Builder, Director
 
@@ -569,6 +571,8 @@ print(repr(house))    #Floor: More than one | Size: Small
 
 ##### Factory Pattern
 
+An interface for creating an object.
+
 ```python
 from pypattyrn.creational.factory import Factory  # This is just an interface
 
@@ -606,6 +610,8 @@ dog.speak()  # 'woof'
 ```
 
 ##### Abstract Factory Pattern
+
+Create an instance from a family of factories.
 
 ```python
 from pypattyrn.creational.factory import Factory, AbstractFactory
@@ -687,6 +693,8 @@ fly.fly()  # 'fly'
 
 ##### Object Pool Pattern
 
+Provide a pool of instantiated objects which can be checked out and returned rather than creating new objects all the time.
+
 ```python
 from pypattyrn.creational.pool import Reusable, Pool
 
@@ -722,6 +730,8 @@ assert dog_one.sound == dog_four.sound
 ```
 
 ##### Prototype Pattern
+
+Clone an object to produce new objects.
 
 ```python
 from pypattyrn.creational.prototype import Prototype
@@ -759,6 +769,8 @@ assert point_four.distance_to(point_three) == 0
 ```
 
 ##### Singleton Pattern
+
+Ensure that only a single instance of a class exists.
 
 ```python
 from pypattyrn.creational.singleton import Singleton
