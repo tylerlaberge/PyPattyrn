@@ -1,5 +1,4 @@
 # PyPattyrn
-___
 
 ```python
 from pypattyrn.creational.singleton import Singleton
