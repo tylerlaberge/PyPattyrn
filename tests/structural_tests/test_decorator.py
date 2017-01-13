@@ -118,6 +118,27 @@ class DecoratorComplexTestCase(TestCase):
         self.assertEquals(('foo', True), slow_class.slow_function_true(2))
         self.assertEquals((10, False), slow_class.slow_function_false(10))
 
+    def test_decorate_kwargs(self):
+        """
+        Test decorating a function with kwargs
+
+        @raise AssertionError: If the test fails.
+        """
+        class SlowClass(object):
+
+            @self.alert(1)
+            def slow_function_true(self, n=0):
+                time.sleep(n)
+                return 'foo'
+
+            @self.alert(1)
+            def slow_function_false(self, n=0):
+                return n
+
+        slow_class = SlowClass()
+        self.assertEquals(('foo', True), slow_class.slow_function_true(n=2))
+        self.assertEquals((10, False), slow_class.slow_function_false(n=10))
+
 
 class WrapTestCase(TestCase):
     """
