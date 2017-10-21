@@ -5,7 +5,7 @@ class Director(object, metaclass=ABCMeta):
     """
     Abstract director class, responsible for using a builder to fully construct an object.
 
-    - External Usage documentation: U{https://github.com/tylerlaberge/PyPatterns/wiki/Creational-Pattern-Usage}
+    - External Usage documentation: U{https://github.com/tylerlaberge/PyPattyrn#builder-pattern}
     - External Builder Pattern documentation: U{https://en.wikipedia.org/wiki/Builder_pattern}
     """
 
@@ -39,7 +39,7 @@ class Builder(object, metaclass=ABCMeta):
     """
     Abstract builder class, responsible for constructing various pieces of an object.
 
-    - External Usage documentation: U{https://github.com/tylerlaberge/PyPatterns/wiki/Creational-Pattern-Usage}
+    - External Usage documentation: U{https://github.com/tylerlaberge/PyPattyrn#builder-pattern}
     - External Builder Pattern documentation: U{https://en.wikipedia.org/wiki/Builder_pattern}
     """
 

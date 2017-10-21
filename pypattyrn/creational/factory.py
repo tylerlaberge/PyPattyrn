@@ -7,7 +7,7 @@ class Factory(object, metaclass=ABCMeta):
 
     All Factories should inherit this class and overwrite the create method.
 
-    - External Usage documentation: U{https://github.com/tylerlaberge/PyPatterns/wiki/Creational-Pattern-Usage}
+    - External Usage documentation: U{https://github.com/tylerlaberge/PyPattyrn#factory-pattern}
     - External Factory Pattern documentation: U{https://en.wikipedia.org/wiki/Factory_method_pattern}
     """
     @abstractmethod
@@ -26,7 +26,7 @@ class AbstractFactory(Factory, metaclass=ABCMeta):
     """
     Abstract Factory Class as part of the AbstractFactory design pattern.
 
-    - External Usage documentation: U{https://github.com/tylerlaberge/PyPatterns/wiki/Creational-Pattern-Usage}
+    - External Usage documentation: U{https://github.com/tylerlaberge/PyPattyrn#abstract-factory-pattern}
     - External Abstract Factory Pattern documentation: U{https://en.wikipedia.org/wiki/Abstract_factory_pattern}
     """
     def __init__(self):
