@@ -5,7 +5,7 @@ class ChainLink(object, metaclass=ABCMeta):
     """
     Abstract ChainLink object as part of the Chain of Responsibility pattern.
 
-    - External Usage documentation: U{https://github.com/tylerlaberge/PyPatterns/wiki/Behavioral-Pattern-Usage}
+    - External Usage documentation: U{https://github.com/tylerlaberge/PyPattyrn#chain-of-responsibility-pattern}
     - External Chain of Responsibility Pattern documentation: U{https://en.wikipedia.org/wiki/Chain-of-responsibility_pattern}
     """
     def __init__(self):
@@ -45,7 +45,7 @@ class Chain(object, metaclass=ABCMeta):
     """
     Abstract Chain class as part of the Chain of Responsibility pattern.
 
-    - External Usage documentation: U{https://github.com/tylerlaberge/PyPatterns/wiki/Behavioral-Pattern-Usage}
+    - External Usage documentation: U{https://github.com/tylerlaberge/PyPattyrn#chain-of-responsibility-pattern}
     - External Chain of Responsibility Pattern documentation: U{https://en.wikipedia.org/wiki/Chain-of-responsibility_pattern}
     """
     def __init__(self, chainlink):

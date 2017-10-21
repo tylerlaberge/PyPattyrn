@@ -7,7 +7,7 @@ class Reusable(Originator, metaclass=ABCMeta):
     """
     An abstract reusable class.
 
-    - External Usage documentation: U{https://github.com/tylerlaberge/PyPatterns/wiki/Creational-Pattern-Usage}
+    - External Usage documentation: U{https://github.com/tylerlaberge/PyPattyrn#object-pool-pattern}
     - External Object Pool Pattern documentation: U{https://en.wikipedia.org/wiki/Object_pool_pattern}
     """
     def __init__(self):
