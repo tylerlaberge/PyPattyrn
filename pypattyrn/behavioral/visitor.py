@@ -5,7 +5,7 @@ class Visitor(metaclass=ABCMeta):
     """
     Abstract Visitor class as part of the Visitor Design Pattern.
 
-    - External Usage documentation: U{https://github.com/tylerlaberge/PyPatterns/wiki/Behavioral-Pattern-Usage}
+    - External Usage documentation: U{https://github.com/tylerlaberge/PyPattyrn#visitor-pattern}
     - External Visitor Design Pattern documentation: U{https://en.wikipedia.org/wiki/Visitor_pattern}
     """
     def visit(self, node, *args, **kwargs):
@@ -19,7 +19,7 @@ class Visitor(metaclass=ABCMeta):
         """
         method = None
         for cls in node.__class__.__mro__:
-            method_name = 'visit_'+cls.__name__.lower()
+            method_name = 'visit_' + cls.__name__.lower()
             method = getattr(self, method_name, None)
             if method:
                 break
@@ -43,7 +43,7 @@ class Visitee(object):
     """
     A base class for objects that wish to be able to be visited by a Visitor class.
 
-    - External Usage documentation: U{https://github.com/tylerlaberge/PyPatterns/wiki/Behavioral-Pattern-Usage}
+    - External Usage documentation: U{https://github.com/tylerlaberge/PyPattyrn#behavioral-patterns}
     - External Visitor Design Pattern documentation: U{https://en.wikipedia.org/wiki/Visitor_pattern}
     """
     def accept(self, visitor, *args, **kwargs):
