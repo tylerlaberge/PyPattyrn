@@ -2,7 +2,7 @@ class FlyweightMeta(type):
     """
     Flyweight meta class as part of the Flyweight design pattern.
 
-    - External Usage Documentation: U{https://github.com/tylerlaberge/PyPatterns/wiki/Structural-Pattern-Usage}
+    - External Usage Documentation: U{https://github.com/tylerlaberge/PyPattyrn#flyweight-pattern}
     - External Flyweight Pattern documentation: U{https://en.wikipedia.org/wiki/Flyweight_pattern}
     """
     def __new__(mcs, name, bases, attrs):

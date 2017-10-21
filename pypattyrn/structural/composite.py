@@ -2,7 +2,7 @@ class Composite(object):
     """
     Composite class as part of the Composite pattern.
 
-    - External Usage Documentation: U{https://github.com/tylerlaberge/PyPatterns/wiki/Structural-Pattern-Usage}
+    - External Usage Documentation: U{https://github.com/tylerlaberge/PyPattyrn#composite-pattern}
     - External Composite Pattern documentation: U{https://en.wikipedia.org/wiki/Composite_pattern}
     """
     def __init__(self, interface):
