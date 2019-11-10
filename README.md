@@ -349,7 +349,7 @@ assert str(null) == '' # Null objects string representation is the empty string.
 assert repr(null) == '' # Null objects repr is the empty string.
 assert bool(null) is False # Null object evaluates to False as a boolean.
 
-# Trying to delete attributes doesnt do anything and won't error.
+# Trying to delete attributes doesn't do anything and won't error.
 try:
     del null.foo 
     del null.foo.bar
