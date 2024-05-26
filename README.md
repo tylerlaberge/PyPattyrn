@@ -1,3 +1,7 @@
+## **NOTE: This repository is not maintained and should not be used. Most of the design patterns implemented in this repository are not really needed when writing idomatic Python.**
+
+
+
 # PyPattyrn
 
 ```python
